@@ -1,0 +1,1 @@
+print('salolar nima gaplar')
