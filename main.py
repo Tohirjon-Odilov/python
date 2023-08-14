@@ -1,1 +1,2 @@
 print('salolar nima gaplar')
+
