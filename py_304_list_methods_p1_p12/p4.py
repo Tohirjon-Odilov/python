@@ -30,5 +30,6 @@ print(lst)
 for i in range(len(lst)):
     for j in range(len(lst[i])):
         if j % 2:
-            lst[i][j] *= lst[i][j]
+            pow(lst[i][j], 2)
+            # lst[i][j] *= lst[i][j]
 print(lst)

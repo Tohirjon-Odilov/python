@@ -35,8 +35,8 @@ while i < 50000:
 # for a in range(2, 50000):
     # b = sum_of_divisors(a)
     # if a != b and sum_of_divisors(b) == a and a < b and b < 50000:
-        # amicable_numbers.append((a, b))
-        # print(a,b)
+    # amicable_numbers.append((a, b))
+    # print(a,b)
 
 # print("Barcha do'stona sonlar:")
 # for pair in amicable_numbers:
