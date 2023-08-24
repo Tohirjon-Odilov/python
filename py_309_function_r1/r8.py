@@ -13,24 +13,20 @@
 
 
 def cat(lst: list) -> int():
-    num_str = list(map(int, map(lambda a: str(a)[0], lst)))
     num = list(map(str, lst))
+    num_str = list(map(lambda a: a[0], num))
     txt = str()
-    # n = int()
-    # print(list(map()))
+
     num_str.sort(reverse=True)
-    num_str = list(map(str, num_str))
     for el in num_str:
         for j in num:
             if el == j[0]:
-                # n = j[0]
                 txt += j
                 break
-    txt = int(txt)
-    return txt
+    return int(txt)
 
 
-lst = [61, 228, 9]
+lst = [61, 288, 9, 78, 43, 55]
 # lst = [1, 2, 3, 4]
 
 print(cat(lst))
