@@ -15,16 +15,15 @@
 # Output: [1,0,0,0,0]
 
 # lst1 = [1, 2, 3]
-# lst1 = [9, 9, 9, 9]
-lst1 = [9]
+lst1 = [9, 9, 9, 9]
+# lst1 = [9]
 
-lst1 = map(str, lst1)
-lst_to_str = str()
+lst1 = list(map(str, lst1))
 
-for i in lst1:
-    lst_to_str += i
-lst_to_str = list(tuple(str(int(lst_to_str) + 1)))
+# lst1 = "".join(list(map(str.lst1)))
 
-for i, el in enumerate(lst_to_str):
-    lst_to_str[i] = int(el)
-print(lst_to_str)
+# lst1 = list(tuple(str(int(lst_to_str)+1)))
+
+# for i, el in enumerate(lst1):
+    # lst1[i] = int(el)
+print(lst1)
