@@ -1,5 +1,8 @@
+import os
+
 # T1:
 # Erkaklarni ismi, familiyasi, davlatini chop eting
+
 if 0:
     file = open("people_count.txt", "r")
     data = file.read()
@@ -192,3 +195,128 @@ if 0:
             n = int(i[-2][:2].replace(":", ""))
             if i[3] == "US" and n < 20:
                 print(i)
+if 0:
+    # T6 ########
+    # Foydalanuvchi ismlarni kiritadi sizning vazifangiz barcha kiritilgan ismlarni faylga alohida
+    # qatorlarga yozib qo'yish. Foydalanuvchi qachonki stop so'zini kiritsa, ma'lumot qabul qilish
+    # to'xtatilsin.
+    file = open("names.txt", "a")
+    name = str()
+    while name != "stop":
+        name = input("Enter names: ")
+        data = file.write(name + "\n")
+    file.close()
+if 0:
+    # T7:
+
+    # Foydalanuvchi har xil so'zlarni kiritadi va sizning vazifangiz faylga shu so'zlarni saqlash.
+    # So'zlarni kiritib bergach foydalanuvchi bir string kiritadi va siz fayl ichidagi ma'lumotlardan
+    # kiritilgan stringga o'xshash so'zlarni chiqarish.
+
+    # Masalan ab deg kiritsa, abo, sabab, beadab so'zi ham chiqishi kerak.
+    file = open("sentence.txt", "a+")
+    while True:
+        sentense = input("So'z kiriting: ")
+        if sentense.lower() == "stop":
+            break
+        file.write(sentense + " ")
+    file.seek(0)
+    data = file.read()
+    file.close()
+    data = data.split()
+    txt = input("Enter sentence: ")
+    for i in data:
+        if i.find(txt) != -1:
+            print(i)
+if 0:
+    # T8:
+
+    # Fayl ichidagi betartib berilgan raqamlarni boshqa faylga tartiblangan tarzda yozing.
+    # Ya'ni bir qatorda bitta raqam holatiga keltirishingiz kerak.
+
+    file = open("raqamlar.txt", "r")
+    data = file.read().split("+")
+    wrote = open("telphone.txt", "w")
+    for _, i in enumerate(data):
+        if _ == 0:
+            continue
+        wrote.write("+" + i + "\n")
+    wrote.close()
+from myfunction import select_number
+
+if 1:
+    """
+    Dastur ishga tushgan vaqtda ekranga 2ta variant chiqsin.
+    1. Kompaniya bo'yicha qidirish.
+    2. Qolip bo'yicha bo'yicha qidirish
+
+    Kompaniya bo'yicha qidirish tanlansa ekranga
+    1. Beeline
+    2. Uzmobile
+    3. MobiUz
+    4. Humans
+
+    chiqsin.
+
+    Kompaniyalarning biri tanlangach shu kompaniyalarga tegishli kodlar
+    (90/91...) lar ro'yaxti chiqsin.
+
+    kodni tanlagach shu kod bilan boshlanuvchi 15 ta raqam va ro'yxat agar yana
+    raqamlar bo'sa  16. Yana ko'rsatish  menyusi ham qo'shilib qolsin, aks
+    xolda chiqmasin.
+
+    Kerakli raqam tanlangach,"Rostdan ham shu raqamni sotib olmoqchimisiz?"
+    degan yozuv chiqsin va sotilib olishni tanlasa tanlangan raqamni filedan
+    o'chirib tashlasin va soldNumbers.txtga sotilgan raqamni kiritib qo'ysin
+    "Xaridingiz uchun rahmat" degan yozuv chiqsin.
+    """
+    with open("raqamlar.txt", "r") as file:
+        data = file.read().split("+")
+        print("1. Kompaniya bo'yicha qidirish.\n2. Qolip bo'yicha bo'yicha qidirish")
+        selected_menu = int(input("1 yoki 2 ni kiriting: "))
+        if selected_menu == 1:
+            print("\nKompaniya bo'yicha tanlang:")
+            print(
+                "1. Beeline\n2. Uzmobile\n3. MobiUz\n4. Humans\n5. Ucell (Hoyotning yorqin tarafida bo'l!!!)"
+            )
+            selected_company = int(input("Tepadagidan birini tanlang: "))
+            # comp_dict = {
+            #     1: ["90", "91"],
+            #     2: ["99", "95"],
+            #     3: ["97"],
+            #     4: ["92", "94"],
+            #     5: ["93", "94"],
+            # }
+            os.system("clear")
+            count = 0
+            if selected_company == 1:
+                print("<<90>>\n<<91>>")
+                selected_company_code = input("Nechchiligi kerak: ")
+                os.system("clear")
+                dif = 15
+                print("+------+--------------------+")
+                select_number(data, selected_company_code, count, dif)
+            elif selected_company == 2:
+                print("<<95>>\n<<99>>")
+                selected_company_code = input("Nechchiligi kerak: ")
+                print("+------+--------------------+")
+                select_number(data, selected_company_code, count, 15)
+            elif selected_company == 3:
+                print("<<97>>")
+                # code = input("Nechchiligi kerak: ")
+                print("+------+--------------------+")
+                select_number(data, "97", count, 15)
+            elif selected_company == 4:
+                print("<<92>>\n<<94>>")
+                selected_company_code = input("Nechchiligi kerak: ")
+                print("+------+--------------------+")
+                select_number(data, selected_company_code, count, 15)
+            elif selected_company == 5:
+                print("<<93>>\n<<94>>")
+                selected_company_code = input("Nechchiligi kerak: ")
+                print("+------+--------------------+")
+                select_number(data, selected_company_code, count, 15)
+        elif selected_menu == 2:
+            pass
+if 1:
+    enter = input("Your name")
