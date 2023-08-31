@@ -1,2 +1,0 @@
-print('salolar nima gaplar')
-

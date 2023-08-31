@@ -278,8 +278,9 @@ if 1:
     o'chirib tashlasin va soldNumbers.txtga sotilgan raqamni kiritib qo'ysin
     "Xaridingiz uchun rahmat" degan yozuv chiqsin.
     """
-    with open("raqamlar.txt", "r") as file:
-        data = file.read().split("+")
+    with open("telphone.txt", "r") as file:
+        data = file.readlines()
+        data = list(map(lambda line: line[:-1], data))
         print("1. Kompaniya bo'yicha qidirish.\n2. Qolip bo'yicha bo'yicha qidirish")
         selected_menu = int(input("1 yoki 2 ni kiriting: "))
         if selected_menu == 1:
@@ -336,6 +337,8 @@ if 1:
                     print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
         elif selected_menu == 2:
             pass
+
+
 if 0:
     txt = "Test sinovlarida natijangiz pastroq bo'lsa, bundan tushkunlikka tushmang."
     first = list(txt.split()[0])
