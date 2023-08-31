@@ -1,5 +1,3 @@
-import os
-
 # T1:
 # Erkaklarni ismi, familiyasi, davlatini chop eting
 
@@ -84,9 +82,14 @@ if 0:
                 print(i[-2])
     # 3 - shart
     if 0:
-        for i in data:
-            if i[-1] == "false" and 1000 > float(i[-2][1:]):
-                print(i[2])
+        # for i in data:
+        #     if i[-1] == "false" and 1000 > float(i[-2][1:]):
+        #         print(i[2])
+        data = list(
+            filter(
+                lambda line: float(line[-2][1:]) > 1000 and line[-1] == "false", data
+            )
+        )
 if 0:
     """
     T4:
@@ -109,10 +112,10 @@ if 0:
     file.close()
     data = list(map(lambda a: a[:-1].split(","), data))
     if 0:
-        time = int(input("Soat'ni kiriting: "))
+        times = int(input("Soatni kiriting: "))
         for i in data:
             n = i[-1][:2].replace(":", "")
-            if time <= int(n):
+            if times <= int(n):
                 # print(
                 #     "%-4s | %-20s | %-8s | %-4s | %-15s | %-5s"
                 #     % (i[0], i[1], i[2], i[3], i[4], i[5])
@@ -177,7 +180,7 @@ if 0:
         country = input("Davlat nomini kiriting: ")
         for i in data:
             n = int(i[2][:2].replace(":", ""))
-            if 12 <= n <= 21 and country.upper() == i[1]:
+            if 12 <= n <= 20 and country.upper() == i[1]:
                 print(
                     "%3s | %5s | %-3s | %-5s | %-10s" % (i[1], i[2], i[3], i[4], i[5])
                 )
@@ -242,10 +245,15 @@ if 0:
             continue
         wrote.write("+" + i + "\n")
     wrote.close()
-from myfunction import select_number
+    file.close()
 
 if 1:
+    import time
+
+    from myfunction import select_number
+
     """
+    T 9:
     Dastur ishga tushgan vaqtda ekranga 2ta variant chiqsin.
     1. Kompaniya bo'yicha qidirish.
     2. Qolip bo'yicha bo'yicha qidirish
@@ -279,44 +287,60 @@ if 1:
             print(
                 "1. Beeline\n2. Uzmobile\n3. MobiUz\n4. Humans\n5. Ucell (Hoyotning yorqin tarafida bo'l!!!)"
             )
-            selected_company = int(input("Tepadagidan birini tanlang: "))
             # comp_dict = {
             #     1: ["90", "91"],
             #     2: ["99", "95"],
             #     3: ["97"],
-            #     4: ["92", "94"],
+            #     4: ["92", "96"],
             #     5: ["93", "94"],
             # }
-            os.system("clear")
-            count = 0
+            # os.system("clear")
+            selected_company = int(input("Tepadagidan birini tanlang: "))
             if selected_company == 1:
                 print("<<90>>\n<<91>>")
                 selected_company_code = input("Nechchiligi kerak: ")
-                os.system("clear")
-                dif = 15
+                # os.system("clear")
                 print("+------+--------------------+")
-                select_number(data, selected_company_code, count, dif)
+                if selected_company_code == "90" or selected_company_code == "91":
+                    select_number(data, selected_company_code, 0, 15)
+                else:
+                    print("Siz noto'g'ri kod kiritdingiz. Qaytadan urinib ko'ring.")
             elif selected_company == 2:
                 print("<<95>>\n<<99>>")
                 selected_company_code = input("Nechchiligi kerak: ")
                 print("+------+--------------------+")
-                select_number(data, selected_company_code, count, 15)
+                if selected_company_code == "95" or selected_company_code == "99":
+                    select_number(data, selected_company_code, 0, 15)
+                else:
+                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
             elif selected_company == 3:
-                print("<<97>>")
-                # code = input("Nechchiligi kerak: ")
+                print("Faqatgina <<97>> kodligi mavjud!")
+                time.sleep(2)
                 print("+------+--------------------+")
-                select_number(data, "97", count, 15)
+                select_number(data, "97", 0, 15)
             elif selected_company == 4:
-                print("<<92>>\n<<94>>")
+                print("<<92>>\n<<96>>")
                 selected_company_code = input("Nechchiligi kerak: ")
                 print("+------+--------------------+")
-                select_number(data, selected_company_code, count, 15)
+                if selected_company_code == "92" or selected_company_code == "96":
+                    select_number(data, selected_company_code, 0, 15)
+                else:
+                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
             elif selected_company == 5:
                 print("<<93>>\n<<94>>")
                 selected_company_code = input("Nechchiligi kerak: ")
                 print("+------+--------------------+")
-                select_number(data, selected_company_code, count, 15)
+                if selected_company_code == "93" or selected_company_code == "94":
+                    select_number(data, selected_company_code, 0, 15)
+                else:
+                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
         elif selected_menu == 2:
             pass
-if 1:
-    enter = input("Your name")
+if 0:
+    txt = "Test sinovlarida natijangiz pastroq bo'lsa, bundan tushkunlikka tushmang."
+    first = list(txt.split()[0])
+    first.reverse()
+    last = list(txt.split()[-1])
+    last.reverse()
+    txt = ["".join(first)] + txt.split()[1:-1] + ["".join(last)]
+    print(" ".join(txt))
