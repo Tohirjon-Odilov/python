@@ -250,8 +250,9 @@ if 0:
 if 1:
     from time import sleep
     from sys import *
+
     # import os
-    from os import system 
+    from os import system
     from myfunction import *
 
     """
@@ -282,12 +283,12 @@ if 1:
     """
     with open("telphone.txt", "r") as file:
         system("clear")
-        data = file.readlines() 
+        data = file.readlines()
         data = list(map(lambda line: line[:-1], data))
         print("1. Kompaniya bo'yicha qidirish.\n2. Qolip bo'yicha bo'yicha qidirish.")
         try:
             selected_menu = int(input("<<1>> yoki <<2>> ni kiriting.\n>>> ").strip())
-        
+
             if selected_menu == 1:
                 system("clear")
                 print("Qaysi kompaniya kerak:")
@@ -311,7 +312,9 @@ if 1:
                     if selected_company_code == "95" or selected_company_code == "99":
                         select_number(data, selected_company_code, 0, 15)
                     else:
-                        print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
+                        print(
+                            "Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring."
+                        )
                 elif selected_company == 3:
                     print("Faqatgina <<97>> kodligi mavjud!")
                     sleep(2)
@@ -324,7 +327,9 @@ if 1:
                     if selected_company_code == "92" or selected_company_code == "96":
                         select_number(data, selected_company_code, 0, 15)
                     else:
-                        print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
+                        print(
+                            "Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring."
+                        )
                 elif selected_company == 5:
                     print("<<93>>\n<<94>>")
                     selected_company_code = input("Nechchiligi kerak: ")
@@ -334,20 +339,30 @@ if 1:
                     else:
                         exit("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
             elif selected_menu == 2:
-                system("clear")
-                print("Taxminiy raqam kiriting: ")
-                searched_number = input(
-                    ">>> ",
-                )
-                serched_number_to_list(data, searched_number)
-                exit("\nIltimos faqat raqam kiriting!")
+                while True:
+                    system("clear")
+                    print("Taxminiy raqam kiriting.\nMasalan: 90 123 45 67")
+                    searched_number = input(
+                        ">>> ",
+                    ).strip()
+                    if " " in searched_number or len(searched_number) == 3 or 2:
+                        serched_number_to_list(data, searched_number, [15, "salom"])
+                        exit("\033[1;31mDastur to'xtadi\033[1;0m")
+                    else:
+                        sleep(1)
+                        print(
+                            "Siz noto'g'ri formatda kiritdingiz. Qaytadan urinib ko'ring."
+                        )
+                        continue
             else:
-                exit("\nKo'rsatilgan raqamlardan boshqasi kiritildi.\n Dastur to'xtadi!")
-        except ValueError:
-            exit("\nSiz raqam kiritmadingiz.")
+                exit(
+                    "\nKo'rsatilgan raqamlardan boshqasi kiritildi.\n\033[1;31mDastur to'xtadi!"
+                )
+        except Exception as e:
+            exit("\n" + e + "\n" + "\n\033[1;31mDastur to'xtadi.")
         except KeyboardInterrupt:
             exit("\033[1;31m\nDastur to'xtadi!")
-        
+
 if 0:
     txt = "Test sinovlarida natijangiz pastroq bo'lsa, bundan tushkunlikka tushmang."
     first = list(txt.split()[0])

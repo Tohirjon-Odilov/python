@@ -4,12 +4,15 @@ from os import system
 
 
 def write_file(selected_number_id: str, data: list) -> None:
+    # print(data[selected_number_id])
+    # if data[selected_number_id] != None:
+    system("clear")
     print("+------+-----------------------------+")
     print("Tanlangan raqam -> " + "\033[1;31m" + data[selected_number_id] + "\033[0m")
     print("+------+-----------------------------+")
-    print("Tanlangan raqamni rostdan ham sotib olmoqchimisiz?")
+    print("\033[1;35mTanlangan raqamni rostdan ham sotib olmoqchimisiz?\033[1;0m")
     is_bought = input(
-        "<<1>> Ha sotib olaman <<2>> Orqaga qaytish <<3>> Bekor qilish\n>>> "
+        "\033[1;37m<<1>> Ha sotib olaman\033[1;0m <<2>> Orqaga qaytish <<3>> Bekor qilish\n>>> "
     )
     if is_bought == "1":
         print("Keling rasmiylashtiramiz!")
@@ -28,12 +31,17 @@ def write_file(selected_number_id: str, data: list) -> None:
         exit("\033[1;31mDastur to'xtadi!\033[1;0m")
 
 
-def bought_number(pagination: str, data: list) -> None:
+# else:
+# print("Afsuski siz qidirgan raqam mavjud emas!")
+
+
+def bought_number(pagination: str, data: list, count) -> None:
     """
     !!!
     """
     if pagination == "1":
-        ...
+        serched_number_to_list(data, count[0], [int(count[1]), 'salom'])
+        # return int(count[1]) + 15
     elif pagination == "2":
         selected_number_id = int(input("Id bo'yicha tanlang:\n>>> "))
         if selected_number_id != 0:
@@ -41,7 +49,8 @@ def bought_number(pagination: str, data: list) -> None:
             write_file(selected_number_id, data)
         else:
             exit("\033[1;31mDastur to'xtadi!\033[1;0m")
-
+    elif pagination == "3":
+        exit("\033[1;31mDastur to'xtadi!\033[1;0m")
 
 def select_number(
     data: list, selected_company_code: str, count: int, change_count: int
@@ -59,24 +68,30 @@ def select_number(
         if count == change_count:
             change_count += 15
             pagination = input("Next <<1>>  Buy number <<2>>  Close <<3>>\n>>> ")
-            bought_number(pagination, data)
+            bought_number(pagination, data, count)
 
 
-def serched_number_to_list(data: list, searched_number: str) -> None:
+def serched_number_to_list(data: list, searched_number: str, change_count_list) -> None:
     """
-    User tomonigdan kiritilgan taxminiy raqamlarni chop etadi. Dastur hech nima qaytarmaydi.
+    User tomonidan kiritilgan taxminiy telefon raqamlarni chop etadi. Dastur hech nima qaytarmaydi.
     """
-    print("+------+--------------------+")
-    filtred_number = list()
-    for data_id, data_element in enumerate(data, 1):
-        if searched_number in data_element:
-            filtred_number.append(data_element)
-            print(
-                "| \033[1;34m%-4s\033[0m | \033[1;32m%s\033[0m |"
-                % (data_id, data_element)
-            )
-            print("+------+--------------------+")
     try:
-        bought_number("2", data)
+        print("+------+--------------------+")
+        # filtred_number = list()
+        count = 0
+        # change_count = 15
+        print(change_count_list[0])
+        for data_id, data_element in enumerate(data, 1):
+            if count != change_count_list[0] and searched_number in data_element:
+                count += 1
+                # filtred_number.append(data_element)
+                print(
+                    "| \033[1;34m%-4s\033[0m | \033[1;32m%s\033[0m |"
+                    % (data_id, data_element)
+                )
+                print("+------+--------------------+")
+            else:
+                pagination = input("Next <<1>>  Buy number <<2>>  Close <<3>>\n>>> ")
+                bought_number(pagination, data, [searched_number, count])
     except Exception as e:
-        print(e + "\nDastur to'xtadi!")
+        exit("\n" + e + "\n" + "\n\033[1;31mDastur to'xtadi.")
