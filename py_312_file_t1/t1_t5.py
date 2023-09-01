@@ -248,9 +248,11 @@ if 0:
     file.close()
 
 if 1:
-    import time
-
-    from myfunction import select_number
+    from time import sleep
+    from sys import *
+    # import os
+    from os import system 
+    from myfunction import *
 
     """
     T 9:
@@ -279,66 +281,73 @@ if 1:
     "Xaridingiz uchun rahmat" degan yozuv chiqsin.
     """
     with open("telphone.txt", "r") as file:
-        data = file.readlines()
+        system("clear")
+        data = file.readlines() 
         data = list(map(lambda line: line[:-1], data))
-        print("1. Kompaniya bo'yicha qidirish.\n2. Qolip bo'yicha bo'yicha qidirish")
-        selected_menu = int(input("1 yoki 2 ni kiriting: "))
-        if selected_menu == 1:
-            print("\nKompaniya bo'yicha tanlang:")
-            print(
-                "1. Beeline\n2. Uzmobile\n3. MobiUz\n4. Humans\n5. Ucell (Hoyotning yorqin tarafida bo'l!!!)"
-            )
-            # comp_dict = {
-            #     1: ["90", "91"],
-            #     2: ["99", "95"],
-            #     3: ["97"],
-            #     4: ["92", "96"],
-            #     5: ["93", "94"],
-            # }
-            # os.system("clear")
-            selected_company = int(input("Tepadagidan birini tanlang: "))
-            if selected_company == 1:
-                print("<<90>>\n<<91>>")
-                selected_company_code = input("Nechchiligi kerak: ")
-                # os.system("clear")
-                print("+------+--------------------+")
-                if selected_company_code == "90" or selected_company_code == "91":
-                    select_number(data, selected_company_code, 0, 15)
-                else:
-                    print("Siz noto'g'ri kod kiritdingiz. Qaytadan urinib ko'ring.")
-            elif selected_company == 2:
-                print("<<95>>\n<<99>>")
-                selected_company_code = input("Nechchiligi kerak: ")
-                print("+------+--------------------+")
-                if selected_company_code == "95" or selected_company_code == "99":
-                    select_number(data, selected_company_code, 0, 15)
-                else:
-                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
-            elif selected_company == 3:
-                print("Faqatgina <<97>> kodligi mavjud!")
-                time.sleep(2)
-                print("+------+--------------------+")
-                select_number(data, "97", 0, 15)
-            elif selected_company == 4:
-                print("<<92>>\n<<96>>")
-                selected_company_code = input("Nechchiligi kerak: ")
-                print("+------+--------------------+")
-                if selected_company_code == "92" or selected_company_code == "96":
-                    select_number(data, selected_company_code, 0, 15)
-                else:
-                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
-            elif selected_company == 5:
-                print("<<93>>\n<<94>>")
-                selected_company_code = input("Nechchiligi kerak: ")
-                print("+------+--------------------+")
-                if selected_company_code == "93" or selected_company_code == "94":
-                    select_number(data, selected_company_code, 0, 15)
-                else:
-                    print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
-        elif selected_menu == 2:
-            pass
-
-
+        print("1. Kompaniya bo'yicha qidirish.\n2. Qolip bo'yicha bo'yicha qidirish.")
+        try:
+            selected_menu = int(input("<<1>> yoki <<2>> ni kiriting.\n>>> ").strip())
+        
+            if selected_menu == 1:
+                system("clear")
+                print("Qaysi kompaniya kerak:")
+                print(
+                    "1. Beeline\n2. Uzmobile\n3. MobiUz\n4. Humans\n5. Ucell (Hoyotning yorqin tarafida bo'l!!!)"
+                )
+                selected_company = int(input("\nTepadagidan birini tanlang.\n>>> "))
+                system("clear")
+                if selected_company == 1:
+                    print("Siz Beelin'ni tanladingiz.\n\n<<90>>\n<<91>>\n")
+                    selected_company_code = input("Nechchiligi kerak: ")
+                    print("+------+--------------------+")
+                    if selected_company_code == "90" or selected_company_code == "91":
+                        select_number(data, selected_company_code, 0, 15)
+                    else:
+                        print("Siz noto'g'ri kod kiritdingiz. Qaytadan urinib ko'ring.")
+                elif selected_company == 2:
+                    print("<<95>>\n<<99>>")
+                    selected_company_code = input("Nechchiligi kerak: ")
+                    print("+------+--------------------+")
+                    if selected_company_code == "95" or selected_company_code == "99":
+                        select_number(data, selected_company_code, 0, 15)
+                    else:
+                        print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
+                elif selected_company == 3:
+                    print("Faqatgina <<97>> kodligi mavjud!")
+                    sleep(2)
+                    print("+------+--------------------+")
+                    select_number(data, "97", 0, 15)
+                elif selected_company == 4:
+                    print("<<92>>\n<<96>>")
+                    selected_company_code = input("Nechchiligi kerak: ")
+                    print("+------+--------------------+")
+                    if selected_company_code == "92" or selected_company_code == "96":
+                        select_number(data, selected_company_code, 0, 15)
+                    else:
+                        print("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
+                elif selected_company == 5:
+                    print("<<93>>\n<<94>>")
+                    selected_company_code = input("Nechchiligi kerak: ")
+                    print("+------+--------------------+")
+                    if selected_company_code == "93" or selected_company_code == "94":
+                        select_number(data, selected_company_code, 0, 15)
+                    else:
+                        exit("Siz noto'g'ri kod' kiritdingiz. Qaytadan urinib ko'ring.")
+            elif selected_menu == 2:
+                system("clear")
+                print("Taxminiy raqam kiriting: ")
+                searched_number = input(
+                    ">>> ",
+                )
+                serched_number_to_list(data, searched_number)
+                exit("\nIltimos faqat raqam kiriting!")
+            else:
+                exit("\nKo'rsatilgan raqamlardan boshqasi kiritildi.\n Dastur to'xtadi!")
+        except ValueError:
+            exit("\nSiz raqam kiritmadingiz.")
+        except KeyboardInterrupt:
+            exit("\033[1;31m\nDastur to'xtadi!")
+        
 if 0:
     txt = "Test sinovlarida natijangiz pastroq bo'lsa, bundan tushkunlikka tushmang."
     first = list(txt.split()[0])
