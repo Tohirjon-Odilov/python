@@ -345,8 +345,8 @@ if 1:
                     searched_number = input(
                         ">>> ",
                     ).strip()
-                    if " " in searched_number or len(searched_number) == 3 or 2:
-                        serched_number_to_list(data, searched_number, [15, "salom"])
+                    if " " in searched_number or (len(searched_number) == 3 or 2):
+                        serched_number_to_list(data, searched_number)
                         exit("\033[1;31mDastur to'xtadi\033[1;0m")
                     else:
                         sleep(1)
