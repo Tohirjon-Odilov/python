@@ -70,6 +70,8 @@ barobar bilan ishlashimiz kerak bo'ladi. Funksiya ichidagi 2 va 3 shartlarda
 solishtirish operatori o'rniga o'zlashtirish operatori ishlatilgan
 Hamda 3 shartda, shartdan so'ng ikki nuqta qolib ketgan
 """
+
+
 #######################################################################################
 """
 Part II
@@ -146,6 +148,7 @@ if 0:
     except ZeroDivisionError:
         print("\n\033[1;31mNol'ga (0) bo'lish mumkin emas!!!")
 if 0:
+    # Chat GPT
     arithmetic_operations = "+ - * /".split()
 
     def calculate(a: int, b: int, arithmetic: str) -> int:
@@ -187,6 +190,7 @@ if 0:
 
 """
 Problem 4.
+
 Fayl ichida bir necha qatorda matn berilgan bo'ladi. 
 Maqsadingiz shu fayl ichidagi so'zlarni alifbo tartibida saralash.
 """
