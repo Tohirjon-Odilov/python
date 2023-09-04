@@ -13,7 +13,7 @@
 
 # Question 2.
 # Quyidagi kodni izohlang.
-x = 42
+# x = 42
 # print("no") if x > 42 else print("yes") if x == 42 else print("maybe")
 # "yes" chiqadi. If'ning bir qatordagi varianti bo'lib, birinchi shartga to'g'ri kelmaydi.
 # shundan so'ng else ichidagi if sharti ishga tushib "yes" print qiladi.
@@ -56,9 +56,15 @@ x = 42
 # text = " ".join((map(lambda a: a[::-1], text.split())))
 # print(text)
 
-# Problem
+"""
+Problem 2.
 
-if 0:
+Foydalanuvchi kiritgan sonning nomini chop etuvchi dastur tuzing. 
+Agar foydalanuvchi harf kiritsa, shu harfning o'zbek
+alifbosidagi o'rnini chop eting.
+"""
+
+if 1:
 
     def alpha_number(num):
         alpha = {
@@ -77,11 +83,16 @@ if 0:
             30: "o'ttiz",
             40: "qirq",
             50: "ellik",
+            60: "oltmish",
+            70: "yetmish",
+            80: "sakson",
+            90: "to'qson",
+            100: "yuz",
         }
 
         if num in alpha:
             return alpha[num]
-        elif 10 < num < 60 and num % 10 != 0:
+        elif 10 < num < 100 and num % 10 != 0:
             tens = num // 10 * 10
             units = num % 10
             return alpha[tens] + " " + alpha[units]
@@ -101,16 +112,16 @@ if 0:
         user_input = input("Enter a letter or a number: ")
         if user_input.isdigit():
             number = int(user_input)
-            if 0 <= number <= 59:
+            if 0 <= number <= 100:
                 name = alpha_number(number)
                 print(name)
             else:
-                print("Please enter a number between 0 and 59.")
+                print("Please enter a number between 0 and 100.")
         else:
             letter_index = letter_position(user_input)
             print(letter_index)
-    except ValueError:
-        print("Please enter a valid number or letter.")
+    except Exception as e:
+        print("Please enter a valid number or letter.", e)
 
 
 # Problem 3.
@@ -135,7 +146,7 @@ if 0:
                 f.write(f"{key}: {val},")
 
         f.write("}")
-if 1:
+if 0:
     # update
     mydict = {
         "first_name": "John",
@@ -167,3 +178,35 @@ if 0:
 
     with open("data.json", "w") as file:
         json.dump(data, file)
+
+# Problem 4.
+
+# Foydalanuvchi matematik ifodani input orqali kiritadi va sizning vazifangiz ushbu matematik ifodada nechta matematik
+# amallar takrorlanganligi haqida ma’lumotni chiqarib berish.
+# (Matematik amallar: +, -, *, /, %, () )
+
+if 0:
+    math = "2+3*5-2+9/(2+7/5-123)"
+
+    print(
+        f"+ amali {math.count('+')}ta, "
+        f"- amali {math.count('-')}ta, "
+        f"* amali {math.count('*')}ta, "
+        f"/ amali {math.count('/')}ta, "
+        f"() amali {math.count('(')}ta",
+        end=" ",
+    )
+
+# update
+# math = "2+3*5-2+9/(2+7/5-123)(3*20)"
+#
+# operators = "+-*/()"
+#
+# operator_counts = {operator: math.count(operator) for operator in operators}
+# print(operator_counts)
+#
+# operator_string = ", ".join(
+#     [f"{operator} amali {count}ta" for operator, count in operator_counts.items()]
+# )
+#
+# print(operator_string)
