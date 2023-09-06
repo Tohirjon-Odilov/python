@@ -87,7 +87,10 @@ if 1:
             70: "yetmish",
             80: "sakson",
             90: "to'qson",
-            100: "yuz",
+            100: "bir yuz",
+            100: "ikki yuz",
+            100: "uch yuz",
+            100: "to'rt yuz",
         }
 
         if num in alpha:

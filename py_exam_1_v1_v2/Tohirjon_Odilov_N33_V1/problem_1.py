@@ -1,3 +1,7 @@
+"""
+Dictionary MORSE azbukasi berilgan. Ushbu shifrlangan ma'lumotni chiqarib bering.
+"""
+
 MORSE = {
     "-----": "0",
     ".----": "1",

@@ -1,3 +1,9 @@
+"""
+Funksiya parametri sifatida string ma'lumoti berilgan va ushbu stringda
+nechta raqam qatnashganini aniqlovchi funksiya tuzing.
+"""
+
+
 def count_digits(txt: str) -> int:
     """
     Berilgan text ichida nechta raqam borligini sanab o'sha sonni qaytaradi.

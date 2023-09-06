@@ -1,3 +1,7 @@
+""""
+Fayl ichiga input orqali katta butun son yoziladi va ushbu sonni sekund deb tasavvur qiladigan
+bo'lsak, ushbu sekundni kun, soat, minut va sekundga ajratib chiqarib bering.
+"""
 with open("file.txt", "w") as f:
     f.write(input())
 

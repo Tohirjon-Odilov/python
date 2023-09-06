@@ -1,3 +1,10 @@
+"""
+Funksiya parametri sifatida string va so'zlardan iborat list berilgan va sizning vazifangiz ushbu
+va sizning vazifangiz ushbu stringda listdagi so'zlar nechi marta takrorlanganligini aniqlab,
+ma'lumotlarni dictionary ko'rinishda chiqaruvchi funksiya tuzing.
+"""
+
+
 def popular_words(txt: str, lst: list) -> dict:
     """
     Berilgan textda list ichida berilgan so'zlarni nechtaligini qaytaradi.
