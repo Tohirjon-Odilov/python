@@ -1,4 +1,5 @@
 import os
+
 from companents.home import menu
 
 
@@ -11,6 +12,7 @@ def is_user_exists(users, username):
 
 def sign_up():
     name = ""
+    username = ""
     while True:
         username = input("Enter your username-> ")
         users_list = open("users.txt", "r")
@@ -18,8 +20,8 @@ def sign_up():
         if not is_user_exists(all_users, username):
             password = input("Create password for your account-> ")
             name = input("Enter your name-> ")
-            file = open("user_data/" + username + ".txt", "a")
-            file.write(username + "|" + password + "|" + name + "\n")
+            with open("user_data/" + username + ".txt", "w") as file:
+                file.write(username + "|" + password + "|" + name + "|0|0\n")
             users_list = open("users.txt", "a")
             users_list.write(username + "\n")
             os.system("clear")
@@ -28,7 +30,7 @@ def sign_up():
 
         else:
             print("Account has been already created")
-    menu(name)
+    menu(name, username)
 
 
 def sign_in():
@@ -36,14 +38,15 @@ def sign_in():
     users_list = open("users.txt", "r")
     all_users = users_list.read()
     if username in all_users:
-        current_user = open("user_data/" + username + ".txt", "r")
-        correct_password = current_user.readline().split("|")[1]
+        with open("user_data/" + username + ".txt", "r") as current_user:
+            correct_password = current_user.readline().split("|")[1]
 
-        while True:
-            password = input("Enter password-> ")
-            if password + "\n" == correct_password:
-                print("You have been successfully logged in")
-                break
-            else:
-                print("Entered password is incorrect")
-        menu(current_user.readline().split("|")[2])
+            while True:
+                password = input("Enter password-> ")
+                if password == correct_password:
+                    print("You have been successfully logged in")
+                    current_user.seek(0)
+                    break
+                else:
+                    print("Entered password is incorrect")
+            menu(current_user.readline().split("|")[2], username)

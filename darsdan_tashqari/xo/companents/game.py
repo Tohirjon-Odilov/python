@@ -1,5 +1,7 @@
 from os import system
 
+# from companents.home import menu
+
 
 def show_table(game_input):
     print(
@@ -27,9 +29,10 @@ def check_game_status(data):
         return True
     return False
 
+
 def ai_choice(choosable_indexes):
     import random
-    
+
     if len(choosable_indexes) == 0:
         exit("\033[1;31mGame is over!\033[0m")
     else:
@@ -38,8 +41,17 @@ def ai_choice(choosable_indexes):
         return choosen_index
 
 
+def is_game():
+    user_game = input("1. \033[1;35mContinue GAME\033[1;0m 2. \033[1;31mExit\033[1;0m\n>>> ")
+    if user_game == "1":
+        return True
+    elif user_game == "2":
+        return False
+    else:
+        exit("Siz noma'lum son kiritdingiz!!!")
 
-def start_game():
+
+def start_game(username):
     game_input = {
         1: " ",
         2: " ",
@@ -70,18 +82,34 @@ def start_game():
             is_over = check_game_status(game_input)
             if is_over:
                 show_table(game_input)
-                exit("\033[1;35mX Won!\033[1;0m")
+                with open("user_data/" + username + ".txt", "r") as file_read:
+                    user_data = file_read.readline().split("|")
+                    user_won_count = int(user_data[3]) + 1
+
+                    with open("user_data/" + username + ".txt", "w") as file_write:
+                        file_write.write(
+                            f"{user_data[0]}|{user_data[1]}|{user_data[2]}|{user_won_count}|{user_data[4]}"
+                        )
+                print("\033[1;35mX Won!\033[1;0m")
+                return is_game()
+
             game_input[ai_choice(choosable_indexes)] = "\033[1;34mO\033[1;0m"
             is_over = check_game_status(game_input)
             if is_over:
                 show_table(game_input)
-                exit("\033[1;34mO Won!\033[1;0m")
+                with open("user_data/" + username + ".txt", "r") as file_read:
+                    user_data = file_read.readline().split("|")
+                    user_won_count = int(user_data[4]) + 1
+
+                    with open("user_data/" + username + ".txt", "w") as file_write:
+                        file_write.write(
+                            f"{user_data[0]}|{user_data[1]}|{user_data[2]}|{user_data[3]}|{user_won_count}"
+                        )
+                print("\033[1;34mO Won!\033[1;0m")
+                return is_game()
+
         except ValueError:
             system("clear")
             print("\033[1;31mXato\033[1;0m")
         except KeyboardInterrupt:
-            exit("\n\033[1;31mDasturni to'xtatdingiz!\033[0m")
-    # print(f"\033[1;35mX Won!\033[1;0m")
-
-def see_stats():
-    print("Stats")
+            exit("\n\033[1;31mGame has been stopped!\033[0m")

@@ -16,14 +16,14 @@ if 0:
 """
 Problem 2
 """
-if 0:
+if 1:
 
     def only_dublicate(deflist: list):
         deflist = list(map(str, deflist))
         deflist = ",".join(deflist).split(",")
         return list(map(int, list(filter(lambda a: deflist.count(a) >= 2, deflist))))
 
-    mylist = [5, 5, 5, 5, 5]
+    mylist = [3, 3, 4, 5, 6, 6]
     print(only_dublicate(mylist))
 if 0:
     txt = str()
