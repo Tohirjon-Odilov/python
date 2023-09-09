@@ -1,8 +1,8 @@
 class Time:
     def __init__(self, hour: int, minute: int, second: int) -> None:
-        self.hour = hour
-        self.minute = minute
-        self.second = second
+        self.hour = hour % 24
+        self.minute = minute % 60
+        self.second = second % 60
 
     def get_hour(self) -> int:
         return self.hour
@@ -23,9 +23,9 @@ class Time:
         self.second = second
 
     def set_time(self, hour: int, minute: int, second: int) -> None:
-        self.hour = hour
-        self.minute = minute
-        self.second = second
+        self.hour = hour % 24
+        self.minute = minute % 60
+        self.second = second % 60
 
     def to_string(self) -> str:
         return "%02d:%02d:%02d" % (self.hour, self.minute, self.second)
@@ -61,10 +61,8 @@ class Time:
         return self.to_string()
 
 
-date1 = Time(23, 59, 59)
+date1 = Time(500, 59, 59)
 print(date1.to_string())
-date1.set_second(49)
-date1.set_minute(39)
-date1.set_hour(0)
+print(date1.next_second())
 print(date1.next_second())
 print(date1.previus_second())

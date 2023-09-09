@@ -32,5 +32,4 @@ class Date:
 
 
 date1 = Date(7, 9, 2023)
-date1.day()
 print(date1.to_string())
