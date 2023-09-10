@@ -50,14 +50,3 @@ def sign_in():
                 else:
                     print("Entered password is incorrect")
             menu(current_user.readline().split("|")[2], username)
-    else:
-        print(
-            "\033[1;31mAccaunt has not been created!\033[1;0m\nPlease register first!"
-        )
-        first_register = input("1. Register now  2. Exit\n>>> ")
-        if first_register == "1":
-            sign_up()
-        elif first_register == "2":
-            exit("\033[1;31mGame has been stopped!\033[1;0m")
-        else:
-            exit("\033[1;31mEntered unknown number!\033[1;0m")
