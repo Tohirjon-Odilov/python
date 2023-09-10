@@ -28,24 +28,32 @@ class Student(Person):
     def get_info(self):
         return f"""{super().get_info()}    
 Faculty: {self.faculty}
-Level: {self.level}"""
+Level: {self.level}
+Subjects: {self.to_str()}"""
 
     def add_subject(self, addaction_subjects):
-        if addaction_subjects.subject not in self.subjects:
-            self.subjects.append(addaction_subjects.subject)
-            return f"\033[1;36mSuccess\033[1;0m"
+        check = 0
+        for subject in self.subjects:
+            if subject.subject == addaction_subjects.subject:
+                check += 1
+        if not check:
+            self.subjects.append(addaction_subjects)
+            return f"\033[1;36mAdded successfully\033[1;0m"
         else:
-            return f"\033[1;31m This subject already\033[1;0m"
+            return f"\033[1;31mThis subject already\033[1;0m"
 
     def remove_subject(self, removed_subject):
         if removed_subject in self.subjects:
-            self.subjects.pop(removed_subject)
-            return "\033[1;36mSuccess\033[1;0m"
+            self.subjects.remove(removed_subject)
+            return "\033[1;36mDeleted successfully\033[1;0m"
         else:
             return "\033[1;31mInvalid Subject\033[1;0m"
 
-    def all_subjects(self):
-        return self.subjects
+    def to_str(self):
+        all_subjects = str()
+        for i in self.subjects:
+            all_subjects += i.subject + ", "
+        return all_subjects[:-2]
 
 
 class Subjects:
@@ -56,20 +64,26 @@ class Subjects:
 student1 = Student("Holid", "Yusupov", "12.23.2000", "Kiber injinering", 3)
 subject1 = Subjects("Tarix")
 print(student1.add_subject(subject1))
-sleep(1)
+sleep(0.3)
 subject2 = Subjects("Ona tili")
 print(student1.add_subject(subject2))
-sleep(1)
+sleep(0.3)
 subject3 = Subjects("Matematika")
 print(student1.add_subject(subject3))
-sleep(1)
+sleep(0.3)
 subject4 = Subjects("Geografiya")
 print(student1.add_subject(subject4))
-sleep(1)
+sleep(0.3)
 subject5 = Subjects("Ingiliz tili")
 print(student1.add_subject(subject5))
-sleep(1)
+sleep(0.3)
+subject6 = Subjects("Ingiliz tili")
+print(student1.add_subject(subject6))
+sleep(0.3)
+print(student1.remove_subject(subject6))
+sleep(0.3)
+print(student1.remove_subject(subject1))
+sleep(0.3)
 system("clear")
 
 print(student1.get_info())
-print(student1.all_subjects())
