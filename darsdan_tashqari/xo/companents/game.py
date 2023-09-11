@@ -42,13 +42,16 @@ def ai_choice(choosable_indexes):
 
 
 def is_game():
-    user_game = input("1. \033[1;35mContinue GAME\033[1;0m 2. \033[1;31mExit\033[1;0m\n>>> ")
-    if user_game == "1":
-        return True
-    elif user_game == "2":
-        return False
-    else:
-        exit("Siz noma'lum son kiritdingiz!!!")
+    while True:
+        user_game = input(
+            "1. \033[1;35mContinue GAME\033[1;0m 2. \033[1;31mExit\033[1;0m\n>>> "
+        )
+        if user_game == "1":
+            return True
+        elif user_game == "2":
+            return False
+        else:
+            print("Siz noma'lum son kiritdingiz!!!")
 
 
 def start_game(username):

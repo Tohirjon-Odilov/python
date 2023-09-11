@@ -22,8 +22,8 @@ def sign_up():
             name = input("Enter your name-> ")
             with open("user_data/" + username + ".txt", "w") as file:
                 file.write(username + "|" + password + "|" + name + "|0|0\n")
-            users_list = open("users.txt", "a")
-            users_list.write(username + "\n")
+            with open("users.txt", "a") as users_list:
+                users_list.write(username + "\n")
             os.system("clear")
             print("Your account created successfully!")
             break
@@ -37,6 +37,7 @@ def sign_in():
     username = input("Enter your username-> ")
     users_list = open("users.txt", "r")
     all_users = users_list.read()
+    users_list.close()
     if username in all_users:
         with open("user_data/" + username + ".txt", "r") as current_user:
             correct_password = current_user.readline().split("|")[1]
