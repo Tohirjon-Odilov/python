@@ -18,7 +18,7 @@ def menu(name, username):
         if choice == "1":
             end = start_game(username)
         elif choice == "2":
-            end = see_stats()
+            end = see_stats(name, username)
         elif choice == "3":
             print("Bye")
             exit(0)
