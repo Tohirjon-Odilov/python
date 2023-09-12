@@ -3,6 +3,19 @@ class Core:
         with open("products/" + file_name + ".txt", "a") as file:
             file.write(food)
 
+    def remove_food(self, food, file_name):
+        with open("products/" + file_name + ".txt", "r") as file:
+            lines = file.readlines()
+            lines = " ".join(lines).split('\n')
+            # for line in lines:
+                # print(line.split("|")[0])
+                
+        with open("products/" + file_name + ".txt", "w") as file:
+            for line in lines:
+                # print(line)
+                if line.split("|")[0] != food:
+                    file.write(line)
+
     # def insert_basket(self, basket):
     #     with open("products/baskets.txt", "a") as file:
     #         file.write(basket)

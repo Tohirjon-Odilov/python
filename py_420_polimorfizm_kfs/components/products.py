@@ -1,5 +1,5 @@
 class Food:
-    def __init__(self, name, cost, about="") -> None:
+    def __init__(self, name, about="", cost=0) -> None:
         self.name = name
         self.about = about
         self.cost = cost
