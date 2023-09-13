@@ -1,0 +1,54 @@
+{
+    "address": [
+        {
+            "country": "USA",
+            "city": "New York",
+            "street": "19st Avenue"
+        },
+        {
+            "country": "USA",
+            "city": "Los Angeles",
+            "street": "7st Avenue"
+        },
+        {
+            "country": "USA",
+            "city": "Chicago",
+            "street": "9st Avenue"
+        },
+        {
+            "country": "Russia",
+            "city": "Moscow",
+            "street": "3st Avenue"
+        },
+        {
+            "country": "Russia",
+            "city": "Saint Petersburg",
+            "street": "4st Avenue"
+        },
+        {
+            "country": "Russia",
+            "city": "Novosibirsk",
+            "street": "5st Avenue"
+        },
+        {
+            "country": "Germany",
+            "city": "Berlin",
+            "street": "6st Avenue"
+        },
+        {
+            "country": "Germany",
+            "city": "Hamburg",
+            "street": "7st Avenue"
+        },
+        {
+            "country": "Germany",
+            "city": "Munich",
+            "street": "8st Avenue"
+        },
+        {
+            "country": "France",
+            "city": "Paris",
+            "street": "9st Avenue"
+        }
+    ]
+}
