@@ -1,0 +1,74 @@
+{
+    "car": [
+        {
+            "name": "BMW",
+            "model": "X5",
+            "price": "20000",
+            "capacity": "5",
+            "color": "white"
+        },
+        {
+            "name": "Audi",
+            "model": "A6",
+            "price": "15000",
+            "capacity": "4",
+            "color": "black"
+        },
+        {
+            "name": "Mercedes",
+            "model": "C180",
+            "price": "25000",
+            "capacity": "5",
+            "color": "red"
+        },
+        {
+            "name": "Ferrari",
+            "model": "F40",
+            "price": "35000",
+            "capacity": "2",
+            "color": "red"
+        },
+        {
+            "name": "Lamborghini",
+            "model": "Huracan",
+            "price": "45000",
+            "capacity": "2",
+            "color": "red"
+        },
+        {
+            "name": "Porsche",
+            "model": "911",
+            "price": "60000",
+            "capacity": "2",
+            "color": "red"
+        },
+        {
+            "name": "Bugatti",
+            "model": "Veyron",
+            "price": "80000",
+            "capacity": "2",
+            "color": "red"
+        },
+        {
+            "name": "Volkswagen",
+            "model": "Passat",
+            "price": "40000",
+            "capacity": "4",
+            "color": "black"
+        },
+        {
+            "name": "Volkswagen",
+            "model": "Golf",
+            "price": "30000",
+            "capacity": "4",
+            "color": "black"
+        },
+        {
+            "name": "Mers",
+            "model": "Mers",
+            "price": "20000",
+            "capacity": "5",
+            "color": "white"
+        }
+    ]
+}

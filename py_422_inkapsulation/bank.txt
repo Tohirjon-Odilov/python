@@ -1,0 +1,26 @@
+karta
+        nomi    ("Asaka")
+        seriya  (8600........)
+        muddati ("02/25")
+        parol   ("1111")
+        summa   (0)
+        
+
+        parol_korsat()
+        parol_ozgartir()
+        summani_korsat()
+        summaga_qosh()
+        summadan_ol()
+
+user 
+        ism   ("Abdulla")
+        familiya    ("Vohidov")
+        karta       ("obekt beriladi")
+        naqt puli   (1000000)
+
+ATM 
+        bank nomi        
+
+        karta egasi haqida malimotlarni korish
+        naqt pul olish
+        kartaga pul qo'yish
