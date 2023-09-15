@@ -1,4 +1,3 @@
-from os import system
 from components.core import Core
 from components.menu import show, user_choice
 from components.products import Drink, Food
@@ -31,21 +30,21 @@ class Display:
             select = user_choice("Burgers")
             new = Food(input("Name: "), input("About: "), input("Cost: "))
             self.user_select = self.user_selection(select, new)
-            # if select == 1:
-            # self.core.insert_food(new.get_food(), "burgers")
-            # elif select == 2:
-            # self.core.remove_food(input("Name: "), "burgers")
-            # elif select == 3:
-            # self.core.update_food("burgers")
-            # elif select == 4:
-            # self.core.show_all_food("burgers")
-            # elif select == 5:
-            # self.core.search_food("burgers")
-            # elif select == 0:
-            # exit("\033[1;31mDastur to'xtadi\033[1;0m")
-            # else:
-            # print("Invalid input")
-            # self.choice()
+            if select == 1:
+                self.core.insert_food(new.get_food(), "burgers")
+            elif select == 2:
+                self.core.remove_food(input("Name: "), "burgers")
+            elif select == 3:
+                self.core.update_food("burgers")
+            elif select == 4:
+                self.core.show_all_food("burgers")
+            elif select == 5:
+                self.core.search_food("burgers")
+            elif select == 0:
+                exit("\033[1;31mDastur to'xtadi\033[1;0m")
+            else:
+                print("Invalid input")
+            self.choice()
 
         elif ch == 2:
             select = user_choice("Baskets")

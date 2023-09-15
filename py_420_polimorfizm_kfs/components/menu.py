@@ -1,22 +1,33 @@
 from os import system
 
 
-def show(self):
-    system("clear")
-    print(f"###### Menu ######\n")
-    print(f"1. Burgers")
-    print(f"2. Baskets")
-    print(f"3. Drinks")
-    print(f"4. Sweats")
-    print(f"5. Ice-creams\n")
+class MyPrint:
+    def show(self):
+        system("clear")
+        print(
+            f"###### Menu ######\n"
+            f"1. Burgers"
+            f"2. Baskets"
+            f"3. Drinks"
+            f"4. Sweats"
+            f"5. Ice-creams\n"
+        )
 
-def user_choice(self, name):
-    system("clear")
-    print(f"###### {name} ######\n")
-    print(f"1. Add new item")
-    print(f"2. Remove item")
-    print(f"3. Update item")
-    print(f"4. Show all items")
-    print(f"5. Search item")
-    print(f"0. Exit\n")
-    return int(input(">>> "))
+    def user_choice(self, name):
+        system("clear")
+        print(
+            f"###### {name} ######\n"
+            f"1. Add new item"
+            f"2. Remove item"
+            f"3. Update item"
+            f"4. Show all items"
+            f"5. Search item"
+            f"0. Exit\n"
+        )
+        return int(input(">>> "))
+
+    def invalid_input(self):
+        system("clear")
+        print("Invalid input, try again!")
+        input("Press enter to continue...")
+        self.show()
