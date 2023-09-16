@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87f137f9-2bd1-41dd-9113-86842446036d" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../darsdan_tashqari/xo/user_data/Nodirbek.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/about_company.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../py_424_abstraksiya/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../py_424_abstraksiya/class_abstraksiya.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../py_424_abstraksiya/class_python.py" afterDir="false" />
@@ -14,12 +13,6 @@
       <change afterPath="$PROJECT_DIR$/../py_424_abstraksiya/userRepository.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../py_424_abstraksiya/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../darsdan_tashqari/xo/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../darsdan_tashqari/xo/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/comapany.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/comapany.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
