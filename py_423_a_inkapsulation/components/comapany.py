@@ -1,4 +1,5 @@
-from time import strftime
+from os import system
+from time import strftime, sleep
 
 from components.number import Number
 
@@ -34,7 +35,7 @@ class Company:
         # else:
         #     raise ValueError("\033[1;31mNumber not added\033[1;0m")
 
-    def sell_number(self, number: Number):
+    def sell_number(self, number: Number, user_name):
         number_list = len(self.__phone_numbers)
         self.__phone_numbers.remove(number)
         with open(f"datas/{self.company_name}.txt", "w") as write_file:
@@ -42,10 +43,18 @@ class Company:
                 write_file.write(i.get_number())
         self.set_budget(number.get_price())
         if number_list > len(self.__phone_numbers):
-            print(
-                f"\033[1;33mThis number purchased: {number.get_number()[:-1]}\n"
-                f"This number price is {number.get_price()}\033[1;0m"
-            )
+            i = 10
+            while 0 < i:
+                print(
+                    f"\033[1;33mDear {user_name}, you are purchased:\n"
+                    f"number: {number.get_number()[:-1]}\n"
+                    f"price: {format(number.get_price(), ',')} sum\033[1;0m"
+                )
+                print(f"Oyna tozalanishiga {i} qoldi.")
+                i -= 1
+                sleep(1)
+                system("clear")
+
         else:
             raise ValueError("\033[1;31mNumber not found\033[1;0m")
         # return removed

@@ -1,3 +1,5 @@
+from os import system
+
 from components.about_company import about_company
 
 # from components.comapany import Company
@@ -31,11 +33,12 @@ try:
     user_name = auth()
     company = None
     while True:
+        system("clear")
         user_selection = welcome_display(user_name)
         if user_selection == "1":
             select_number, company = all_numbers()
             selected_number = company.get_phone_numbers()[select_number]
-            company.sell_number(selected_number)
+            company.sell_number(selected_number, user_name)
         elif user_selection == "4":
             about_company()
             print(company)
