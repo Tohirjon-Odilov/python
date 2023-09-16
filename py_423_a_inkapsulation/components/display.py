@@ -1,3 +1,6 @@
+from os import system
+
+
 def admin():
     # system("clear")
     print(f"Yana salom Tohirjon")
@@ -29,15 +32,13 @@ def welcome_display(user_name):
 
 def select_company() -> object:
     # system("clear")
-    print(
-        f"1. Beeline\n" f"2. Mobiuz\n" f"3. Ucell\n" f"4. Uzmobile\n" f"5. All abonent"
-    )
+    print(f"1. Beeline\n2. Mobiuz\n3. Ucell\n4. Uzmobile\n0. Exit")
     welcome_chance = input(">>> ")
     return welcome_chance
 
 
 def show_number(company):
-    for idx, phone in enumerate(company.get_company_numbers(), 1):
+    for idx, phone in enumerate(company.get_phone_numbers(), 1):
         print(
             "%s%s%s%s%s%s%s%s%s"
             % ("+", "-" * 2, "+", "-" * 6, "+", "-" * 5, "+", "-" * 18, "+")
@@ -52,6 +53,7 @@ def show_number(company):
 def select_number():
     print(f"1. Id bo'yicha raqam tanlash\n2. Orqaga qaytish\n3. Exit")
     selected_number = input(">>> ")
+    system("clear")
     return int(selected_number) - 1
 
 

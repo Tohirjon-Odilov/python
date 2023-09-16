@@ -1,12 +1,13 @@
 from datetime import date
+from random import randint
 
 
 class Number:
-    def __init__(self, company, number: str, price: int) -> None:
+    def __init__(self, company, number: str) -> None:
         self.created_at = date.today()
         self.__company = company
         self.__number = number
-        self.__price = price
+        self.__price = randint(10000, 100000)
 
     def set_company_name(self, company):
         self.__company = company
