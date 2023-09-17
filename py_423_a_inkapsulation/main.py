@@ -1,12 +1,10 @@
 from os import system
 
 from components.about_company import about_company
-
+# from components.number import Number
+from components.buy_number import all_numbers
 # from components.comapany import Company
 from components.display import welcome_display, auth
-
-# from components.number import Number
-from components.tools import all_numbers
 
 try:
 
