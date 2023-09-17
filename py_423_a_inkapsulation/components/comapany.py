@@ -38,22 +38,27 @@ class Company:
 
     def sell_number(self, number: Number, user_name):
         number_list = len(self.__phone_numbers)
+
         # sotib olingan raqamni json formatdan faylaga yozadi
-        with open("datas/sold_number.json", "r+") as file:
+        with open("datas/sold_numbers.json", "r+") as file:
             old_data = file.read()
             old_data = loads(old_data) if old_data else {}
             file.seek(0)
             user_numbers = list()
             for data in old_data:
                 if user_name == data:
-                    user_numbers = old_data.get(data).get("phoneNumbers")
-            user_numbers.append(number.get_number()[:-1])
-            old_data[f"{user_name}"] = {
-                "phoneNumbers": [phone for phone in user_numbers],
-                "timeToPurchase": f"{strftime('%d/%m/%Y, %H:%M')}",
-                "companyName": f"{number.get_company()}",
-                "price": f"{number.get_price()}",
-            }
+                    user_numbers = old_data.get(data)
+            user_numbers.append(
+                {
+                    number.get_number()[:-1]: [
+                        number.get_price(),
+                        number.get_company(),
+                        strftime("%d/%m/%Y, %H:%M"),
+                    ]
+                },
+            )
+            old_data[f"{user_name}"] = [phone for phone in user_numbers]
+
             sold_numbers = dumps(old_data, indent=4)
             file.write(sold_numbers)
         self.__phone_numbers.remove(number)
@@ -64,18 +69,26 @@ class Company:
                 write_file.write(i.get_number())
 
         # admin panel'ga yozish
-        # with open(f"datas/admin_panel.json", "r+") as read_write_file:
-        #     company_datas = read_write_file.read()
-        #     company_datas = loads(company_datas) if company_datas else {}
-        #     read_write_file.seek(0)
-        #     company_all_budget = company_datas[number.get_company()].get("budget")
-        #     company_all_budget += number.get_price()
-        #     company_datas[number.get_company()] = {
-        #         "budget": company_all_budget,
-        #         "phoneNumbers": len(self.__phone_numbers),
-        #         "The last time the number was purchased": strftime("%d/%m/%Y, %H:%M"),
-        #     }
-        # self.set_budget(company_all_budget)
+        with open("datas/admin_panel.json", "r+") as read_write_file:
+            company_datas = read_write_file.read()
+            company_datas = loads(company_datas) if company_datas else {}
+            read_write_file.seek(0)
+            if company_datas and number.get_company() in company_datas:
+                company_all_budget = company_datas.get(number.get_company()).get(
+                    "Budget"
+                )
+            else:
+                company_all_budget = 0
+            company_all_budget += number.get_price()
+            company_datas[number.get_company()] = {
+                "Budget": company_all_budget,
+                "Numbers": len(self.__phone_numbers),
+                "The last time the number was purchased": strftime("%d/%m/%Y, %H:%M"),
+            }
+            read_write_file.write(
+                dumps(company_datas, indent=4),
+            )
+        self.set_budget(company_all_budget)
         if number_list > len(self.__phone_numbers):
             i = 10
             while 0 < i:
