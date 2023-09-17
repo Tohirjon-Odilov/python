@@ -1,11 +1,9 @@
-from os import system
-
 from components.comapany import Company
 from components.display import select_company
 
 
 def about_company():
-    system("clear")
+    # system("clear")
     selected_company = select_company()
     if selected_company == "1":
         user_company = Company("Beeline")

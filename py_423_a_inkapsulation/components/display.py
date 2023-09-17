@@ -1,16 +1,13 @@
-from os import system
-
-
 def admin():
     # system("clear")
-    print(f"Yana salom Tohirjon")
+    print(f"Hello again, dear Tohirjon")
 
 
 def auth():
     # system("clear")
     user_name = input("Enter your name: ")
     if user_name != "admin":
-        return user_name
+        return user_name.capitalize()
     else:
         admin()
 
@@ -53,7 +50,7 @@ def show_number(company):
 def select_number():
     print(f"1. Id bo'yicha raqam tanlash\n2. Orqaga qaytish\n3. Exit")
     selected_number = input(">>> ")
-    system("clear")
+    # system("clear")
     return int(selected_number) - 1
 
 

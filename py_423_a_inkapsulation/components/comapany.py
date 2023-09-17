@@ -1,3 +1,4 @@
+from json import dumps, loads
 from os import system
 from time import strftime, sleep
 
@@ -37,27 +38,59 @@ class Company:
 
     def sell_number(self, number: Number, user_name):
         number_list = len(self.__phone_numbers)
+        # sotib olingan raqamni json formatdan faylaga yozadi
+        with open("datas/sold_number.json", "r+") as file:
+            old_data = file.read()
+            old_data = loads(old_data) if old_data else {}
+            file.seek(0)
+            user_numbers = list()
+            for data in old_data:
+                if user_name == data:
+                    user_numbers = old_data.get(data).get("phoneNumbers")
+            user_numbers.append(number.get_number()[:-1])
+            old_data[f"{user_name}"] = {
+                "phoneNumbers": [phone for phone in user_numbers],
+                "timeToPurchase": f"{strftime('%d/%m/%Y, %H:%M')}",
+                "companyName": f"{number.get_company()}",
+                "price": f"{number.get_price()}",
+            }
+            sold_numbers = dumps(old_data, indent=4)
+            file.write(sold_numbers)
         self.__phone_numbers.remove(number)
+
+        # sotib olinga raqamdan tashqari raqamlarni faylga yozadi
         with open(f"datas/{self.company_name}.txt", "w") as write_file:
             for i in self.__phone_numbers:
                 write_file.write(i.get_number())
-        self.set_budget(number.get_price())
+
+        # admin panel'ga yozish
+        # with open(f"datas/admin_panel.json", "r+") as read_write_file:
+        #     company_datas = read_write_file.read()
+        #     company_datas = loads(company_datas) if company_datas else {}
+        #     read_write_file.seek(0)
+        #     company_all_budget = company_datas[number.get_company()].get("budget")
+        #     company_all_budget += number.get_price()
+        #     company_datas[number.get_company()] = {
+        #         "budget": company_all_budget,
+        #         "phoneNumbers": len(self.__phone_numbers),
+        #         "The last time the number was purchased": strftime("%d/%m/%Y, %H:%M"),
+        #     }
+        # self.set_budget(company_all_budget)
         if number_list > len(self.__phone_numbers):
             i = 10
             while 0 < i:
                 print(
                     f"\033[1;33mDear {user_name}, you are purchased:\n"
                     f"number: {number.get_number()[:-1]}\n"
-                    f"price: {format(number.get_price(), ',')} sum\033[1;0m"
+                    f"price: {format(number.get_price(), ',')} sum\033[1;0m\n"
+                    f"Thank you for you purachase!"
                 )
-                print(f"Oyna tozalanishiga {i} qoldi.")
+                print(f"Oyna tozalanishiga {i} sekund qoldi.")
                 i -= 1
                 sleep(1)
                 system("clear")
-
         else:
             raise ValueError("\033[1;31mNumber not found\033[1;0m")
-        # return removed
 
     def __str__(self) -> str:
         return (
