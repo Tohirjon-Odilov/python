@@ -16,10 +16,19 @@ def admin_panel():
             f"0. \033[1;31mExit\033[1;0m\n"
         )
         admin_selected = input(">>> ")
-        return admin_selected, select_company
+        return admin_selected, admin_select_company
     else:
         print("Incorrect password!")
     input("Enterni bossangiz user panelga o'tadi.")
+
+
+def admin_select_company() -> object:
+    system("clear")
+    print(
+        f"1. Beeline\n2. Mobiuz\n3. Ucell\n4. Uzmobile\n5. Mixed\n6. Return comeback\n0. Exit"
+    )
+    welcome_chance = input(">>> ")
+    return welcome_chance
 
 
 ##############################################################

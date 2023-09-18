@@ -48,11 +48,13 @@ class Company:
                 for phone in self.__phone_numbers:
                     write_file.write(phone.get_number())
             if number_list < len(self.__phone_numbers):
-                print("\033[1;33mNumber added successfully\033[1;0m")
+                input(
+                    "\033[1;33mNumber added successfully. Continue for enter\033[1;0m"
+                )
             else:
                 raise ValueError("\033[1;31mNumber not added\033[1;0m")
         else:
-            print("Already added!")
+            input("Already added! Continue for enter.")
 
     def sell_number(self, number: Number, user_name):
         number_list = len(self.__phone_numbers)

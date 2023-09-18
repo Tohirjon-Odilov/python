@@ -12,8 +12,13 @@ def admin_main(admin_panel):
         # system("clear")
         admin_selected, select_company = admin_panel()
         if admin_selected == "1":
-            add_number(Company, select_company)
-            input()
+            is_continue = False
+            while True:
+                if add_number(Company, select_company) == "6":
+                    break
+                    is_continue = True
+            if is_continue:
+                input()
         elif admin_selected == "2":
             delete_number()
             input()
