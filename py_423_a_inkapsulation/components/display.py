@@ -1,20 +1,22 @@
+from os import system
+
+
 def admin():
-    # system("clear")
-    print(f"Hello again, dear Tohirjon")
+    system("clear")
+    input("Hello again, dear Tohirjon")
 
 
 def auth():
-    # system("clear")
+    system("clear")
     user_name = input("Enter your name: ")
-    if user_name != "admin":
-        return user_name.capitalize()
-    else:
+    if user_name == "admin":
         admin()
+    return user_name.capitalize()
 
 
 def welcome_display(user_name):
-    # system("clear")
-    user_name = "Tohirjon" if user_name == "" else user_name
+    system("clear")
+    user_name = user_name
     print(
         f"########## Hello {user_name} ############\n"
         f"1. Buy number\n"
@@ -28,8 +30,8 @@ def welcome_display(user_name):
 
 
 def select_company() -> object:
-    # system("clear")
-    print(f"1. Beeline\n2. Mobiuz\n3. Ucell\n4. Uzmobile\n0. Exit")
+    system("clear")
+    print(f"1. Beeline\n2. Mobiuz\n3. Ucell\n4. Uzmobile\n5. Mixed\n0. Exit")
     welcome_chance = input(">>> ")
     return welcome_chance
 
@@ -50,7 +52,6 @@ def show_number(company):
 def select_number():
     print(f"1. Id bo'yicha raqam tanlash\n2. Orqaga qaytish\n0. Exit")
     selected_number = input(">>> ")
-    # system("clear")
     return selected_number
 
 

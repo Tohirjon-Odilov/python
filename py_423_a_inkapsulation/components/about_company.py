@@ -5,7 +5,7 @@ from components.display import select_company
 
 
 def about_company():
-    # system("clear")
+    system("clear")
     selected_company = select_company()
     if selected_company == "1":
         system("clear")

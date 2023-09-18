@@ -7,8 +7,8 @@ from components.buy_number import all_numbers
 from components.display import welcome_display, auth
 from components.show_my_numbers import show_my_number
 
-
 # try:
+system("clear")
 
 
 class MainCompany:

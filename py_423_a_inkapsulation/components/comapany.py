@@ -1,6 +1,6 @@
 from json import dumps, loads
 from os import system
-from time import strftime, sleep
+from time import strftime
 
 from components.number import Number
 
@@ -10,6 +10,7 @@ class Company:
         self.company_name = company_name
         with open("datas/admin_panel.json", "r") as read_admin:
             datas = read_admin.read()
+            print(datas)
             datas = loads(datas)
             if datas.get(company_name):
                 data = datas.get(company_name)
@@ -98,25 +99,33 @@ class Company:
             )
         self.set_budget(company_all_budget)
         if number_list > len(self.__phone_numbers):
-            i = 10
-            while 0 < i:
-                print(
-                    f"\033[1;33mDear {user_name}, you are purchased:\n"
-                    f"number: {number.get_number()[:-1]}\n"
-                    f"price: {format(number.get_price(), ',')} sum\033[1;0m\n"
-                    f"Thank you for you purachase!"
-                )
-                print(f"Oyna tozalanishiga {i} sekund qoldi.")
-                i -= 1
-                sleep(1)
-                system("clear")
+            system("clear")
+            print(
+                f"\033[1;33mDear {user_name}, you are purchased:\n"
+                f"number: {number.get_number()[:-1]}\n"
+                f"price: {format(number.get_price(), ',')} sum\033[1;0m\n"
+                f"Thank you for you purachase!"
+            )
+        #     i = 10
+        #     while 0 < i:
+        #         print(
+        #             f"\033[1;33mDear {user_name}, you are purchased:\n"
+        #             f"number: {number.get_number()[:-1]}\n"
+        #             f"price: {format(number.get_price(), ',')} sum\033[1;0m\n"
+        #             f"Thank you for you purachase!"
+        #         )
+        #         print(f"Oyna tozalanishiga {i} sekund qoldi.")
+        #         i -= 1
+        #         sleep(1)
+        #         system("clear")
         else:
             raise ValueError("\033[1;31mNumber not found\033[1;0m")
+        input("Retur back menu for enter.")
 
     def __str__(self) -> str:
         return (
             f"Company name: {self.company_name}\n"
             f"The last time the number was purchased: {self.last_purchased}\n"
             f"Numbers: {len(self.__phone_numbers)}\n"
-            f"Budget: {self.__budget}\n"
+            f"Budget: {format(self.__budget, ',')} sum\n"
         )
