@@ -51,7 +51,7 @@ def select_number():
     print(f"1. Id bo'yicha raqam tanlash\n2. Orqaga qaytish\n0. Exit")
     selected_number = input(">>> ")
     # system("clear")
-    return int(selected_number) - 1
+    return selected_number
 
 
 class Display:

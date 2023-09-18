@@ -8,9 +8,17 @@ from components.number import Number
 class Company:
     def __init__(self, company_name) -> None:
         self.company_name = company_name
-        self.__budget = 0
+        with open("datas/admin_panel.json", "r") as read_admin:
+            datas = read_admin.read()
+            datas = loads(datas)
+            if datas.get(company_name):
+                data = datas.get(company_name)
+                self.__budget = data.get("Budget")
+                self.last_purchased = data.get("LastPurchased")
+            else:
+                self.last_purchased = None
+                self.__budget = 0
         self.__phone_numbers = list()
-        self.established_at = strftime("%d/%m/%Y %H:%M:%S")
         with open(f"datas/{company_name}.txt", "r") as read_company_file:
             company_phone_numbers = read_company_file.readlines()
             for phone in company_phone_numbers:
@@ -83,7 +91,7 @@ class Company:
             company_datas[number.get_company()] = {
                 "Budget": company_all_budget,
                 "Numbers": len(self.__phone_numbers),
-                "The last time the number was purchased": strftime("%d/%m/%Y, %H:%M"),
+                "LastPurchased": strftime("%d/%m/%Y, %H:%M"),
             }
             read_write_file.write(
                 dumps(company_datas, indent=4),
@@ -108,7 +116,7 @@ class Company:
     def __str__(self) -> str:
         return (
             f"Company name: {self.company_name}\n"
-            f"Established at: {self.established_at}\n"
+            f"The last time the number was purchased: {self.last_purchased}\n"
             f"Numbers: {len(self.__phone_numbers)}\n"
             f"Budget: {self.__budget}\n"
         )
