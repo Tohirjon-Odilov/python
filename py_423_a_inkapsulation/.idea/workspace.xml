@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="87f137f9-2bd1-41dd-9113-86842446036d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/comapany.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/comapany.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/buy_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/buy_number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datas/Beeline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/Beeline.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/Uzmobile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/Uzmobile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datas/admin_panel.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/admin_panel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datas/sold_numbers.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/sold_numbers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />

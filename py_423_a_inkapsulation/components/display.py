@@ -1,7 +1,7 @@
 from os import system
 
 
-def admin_panel():
+def admin_panel(parol):
     print(
         f"\n1. Add number\n"
         f"2. Delete number\n"
@@ -14,7 +14,7 @@ def admin_panel():
 def admin():
     system("clear")
     print("Hello again, dear Tohirjon")
-    admin_panel()
+    admin_panel("kali")
     input("")
 
 

@@ -42,37 +42,49 @@ def all_numbers():
             while True:
                 company = Company("MobiUz")
                 is_comeback = choice_number(company)
-                if is_comeback == "2" or is_comeback == "":
+                if is_comeback == "":
+                    continue
+                elif is_comeback == "2":
+                    break
                     continue
                 else:
-                    return is_comeback
+                    return is_comeback, company
 
         elif selected_company == "3":
             while True:
                 company = Company("Ucell")
                 is_comeback = choice_number(company)
-                if is_comeback == "2" or is_comeback == "":
+                if is_comeback == "":
+                    continue
+                elif is_comeback == "2":
+                    break
                     continue
                 else:
-                    return is_comeback
+                    return is_comeback, company
 
         elif selected_company == "4":
             while True:
                 company = Company("Uzmobile")
                 is_comeback = choice_number(company)
-                if is_comeback == "2" or is_comeback == "":
+                if is_comeback == "":
+                    continue
+                elif is_comeback == "2":
+                    break
                     continue
                 else:
-                    return is_comeback
+                    return is_comeback, company
 
         elif selected_company == "5":
             while True:
                 company = Company("numbers")
                 is_comeback = choice_number(company)
-                if is_comeback == "2" or is_comeback == "":
+                if is_comeback == "":
+                    continue
+                elif is_comeback == "2":
+                    break
                     continue
                 else:
-                    return is_comeback
+                    return is_comeback, company
 
         elif selected_company == "0":
             exit("Program stopped!")
