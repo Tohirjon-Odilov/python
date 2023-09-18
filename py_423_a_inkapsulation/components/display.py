@@ -1,28 +1,33 @@
 from os import system
 
-
-def admin_panel(parol):
-    print(
-        f"\n1. Add number\n"
-        f"2. Delete number\n"
-        f"3. Change number\n"
-        f"4. Get all sold numbers\n"
-        f"0. \033[1;31mExit\033[1;0m\n"
-    )
+from components.admin.admin_main import admin_main
 
 
-def admin():
+def admin_panel():
+    parol = input("Enter password: ")
     system("clear")
-    print("Hello again, dear Tohirjon")
-    admin_panel("kali")
-    input("")
+    if parol == "kali":
+        print("Hello again, dear Tohirjon")
+        print(
+            f"\n1. Add number\n"
+            f"2. Delete number\n"
+            f"3. Change number\n"
+            f"4. Get all sold numbers\n"
+            f"0. \033[1;31mExit\033[1;0m\n"
+        )
+        admin_selected = input(">>> ")
+        return admin_selected, select_company
+    else:
+        print("Incorrect password!")
+    input("Enterni bossangiz user panelga o'tadi.")
 
 
+##############################################################
 def auth():
     system("clear")
     user_name = input("Enter your name: ")
     if user_name == "admin":
-        admin()
+        admin_main(admin_panel)
     return user_name.capitalize()
 
 

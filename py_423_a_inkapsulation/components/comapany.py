@@ -37,12 +37,22 @@ class Company:
         return self.__phone_numbers
 
     def add_number(self, number: Number):
-        # number_list = len(self.__phone_numbers)
-        self.__phone_numbers.append(number)
-        # if number_list < len(self.__phone_numbers):
-        #     print("\033[1;33mNumber added successfully\033[1;0m")
-        # else:
-        #     raise ValueError("\033[1;31mNumber not added\033[1;0m")
+        number_list = len(self.__phone_numbers)
+        isHas = True
+        for phone in self.__phone_numbers:
+            if phone.get_number() != number.get_number():
+                isHas = False
+        if isHas:
+            self.__phone_numbers.append(number)
+            with open(f"datas/{self.company_name}.txt", "w") as write_file:
+                for phone in self.__phone_numbers:
+                    write_file.write(phone.get_number())
+            if number_list < len(self.__phone_numbers):
+                print("\033[1;33mNumber added successfully\033[1;0m")
+            else:
+                raise ValueError("\033[1;31mNumber not added\033[1;0m")
+        else:
+            print("Already added!")
 
     def sell_number(self, number: Number, user_name):
         number_list = len(self.__phone_numbers)
