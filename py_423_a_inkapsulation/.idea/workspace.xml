@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="87f137f9-2bd1-41dd-9113-86842446036d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/buy_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/buy_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/Beeline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/Beeline.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/Uzmobile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/Uzmobile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/admin_add_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_add_number.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/admin_all_sold_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/admin_change_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/admin_delete_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_delete_number.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/admin_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/comapany.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/comapany.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/MobiUz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/MobiUz.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datas/admin_panel.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/admin_panel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datas/sold_numbers.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/sold_numbers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -47,7 +52,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/datas/admin_panel.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/datas/sold_numbers.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/datas/sold_numbers.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
