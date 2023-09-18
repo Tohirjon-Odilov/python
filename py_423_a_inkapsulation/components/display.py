@@ -1,9 +1,21 @@
 from os import system
 
 
+def admin_panel():
+    print(
+        f"\n1. Add number\n"
+        f"2. Delete number\n"
+        f"3. Change number\n"
+        f"4. Get all sold numbers\n"
+        f"0. \033[1;31mExit\033[1;0m\n"
+    )
+
+
 def admin():
     system("clear")
-    input("Hello again, dear Tohirjon")
+    print("Hello again, dear Tohirjon")
+    admin_panel()
+    input("")
 
 
 def auth():

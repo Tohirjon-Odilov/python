@@ -10,7 +10,6 @@ class Company:
         self.company_name = company_name
         with open("datas/admin_panel.json", "r") as read_admin:
             datas = read_admin.read()
-            print(datas)
             datas = loads(datas)
             if datas.get(company_name):
                 data = datas.get(company_name)
