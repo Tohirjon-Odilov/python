@@ -4,10 +4,11 @@ from PyQt5.QtWidgets import (
     QApplication,
     QLabel,
     QLineEdit,
-    QPushButton
+    QPushButton,
+    QMainWindow
     )
 
-class window(QWidget):
+class window(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.__Init()
@@ -18,10 +19,13 @@ class window(QWidget):
 
         self.user_name = QLabel(self)
         self.edit_name = QLineEdit(self)
+
         self.user_last_name = QLabel(self)
         self.edit_last_name = QLineEdit(self)
+        
         self.user_phone = QLabel(self)
         self.edit_phone = QLineEdit(self)
+        
         self.btn_add = QPushButton(self)
 
         self.user_name.setText('First name')
@@ -36,7 +40,7 @@ class window(QWidget):
         self.user_phone.move(50,150)
         self.edit_phone.move(150, 145)
 
-        self.edit_last_name.clear()
+        # self.edit_last_name.clear()
 
         self.btn_add.move(50,200)
         self.btn_add.setMinimumWidth(240)
