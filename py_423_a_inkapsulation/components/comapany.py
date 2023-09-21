@@ -133,6 +133,9 @@ class Company:
             raise ValueError("\033[1;31mNumber not found\033[1;0m")
         input("Retur back menu for enter.")
 
+    def delete_number(self, number: Number):
+        pass
+
     def __str__(self) -> str:
         return (
             f"Company name: {self.company_name}\n"

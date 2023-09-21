@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87f137f9-2bd1-41dd-9113-86842446036d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../odilov_tohirjon_09_19.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../py_425_git_github/557_1295_541_2042.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/admin/admin_add_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_add_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/admin/admin_all_sold_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/admin/admin_change_number.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/admin/admin_delete_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_delete_number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/admin/admin_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/admin_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/comapany.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/comapany.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/MobiUz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datas/MobiUz.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/admin_panel.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/admin_panel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/sold_numbers.json" beforeDir="false" afterPath="$PROJECT_DIR$/datas/sold_numbers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,19 +66,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/tohirjon/Documents/foundation/python",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tohirjon/Documents/foundation/python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Language Defaults&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

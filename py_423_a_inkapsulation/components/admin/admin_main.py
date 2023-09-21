@@ -20,8 +20,13 @@ def admin_main(admin_panel):
             if is_continue:
                 input()
         elif admin_selected == "2":
-            delete_number()
-            input()
+            is_continue = False
+            while True:
+                if delete_number(Company, select_company) == "6":
+                    break
+                    is_continue = True
+            if is_continue:
+                input()
         elif admin_selected == "3":
             change_number()
             input()
