@@ -9,15 +9,11 @@ QPushButton{
     color: black;
     font-weight: 600;
     outline: none;
-    /* border: 0; */
+    /* border: 1px solid #999; */
+    /* border-radius: 10px; */
 }
 
 QPushButton:hover{
-    background-color: crimson;
-    color: white;
-}
-
-QPushButton:focus{
     background-color: yellowgreen;
     color: white;
 }

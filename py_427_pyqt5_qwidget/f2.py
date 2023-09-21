@@ -1,4 +1,6 @@
+from math import sqrt
 from sys import argv
+from time import sleep
 
 from PyQt5.QtWidgets import (
     QWidget,
@@ -17,10 +19,11 @@ class window(QMainWindow):
         self.setStyleSheet(open("style.css").read())
         self.calc()
         self.text = str()
+        self.isSqrt = False
 
     def calc(self):
         self.setWindowTitle("Calculator")
-        self.setFixedSize(400, 290)
+        self.setFixedSize(500, 290)
 
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
@@ -33,7 +36,8 @@ class window(QMainWindow):
         self.central_widget.setLayout(self.layout)
 
         btn_grid = [
-            ["Clear","%"],
+            ["Clear","🔙","%"],
+            ["(", ")", "**"],
             ["1", "2", "3", "/"],
             ["4", "5", "6", "*"],
             ["7", "8", "9", "-"],
@@ -49,21 +53,54 @@ class window(QMainWindow):
                 btn.setText(button_text)
                 btn.clicked.connect(self.btn_clicked)
                 row_layout.addWidget(btn)
+                if button_text == "Clear":
+                    btn.setStyleSheet("background-color: crimson; color: white")
+                elif button_text == '=':
+                    btn.setStyleSheet("background-color: yellowgreen; color: white")                    
             button_layout.addLayout(row_layout)
 
         self.layout.addLayout(button_layout)
 
     def btn_clicked(self):
-        clicked_button = self.sender()
-        self.text += clicked_button.text()
-        self.label_input.setText(self.text)
+        try:                
+            self.clicked_button = self.sender().text()
+            print(self.text, "||", self.clicked_button)
+            if not self.clicked_button.isalnum() and self.text.count(self.clicked_button) != 0:
+                self.label_input.setText("Two character")
+            elif self.clicked_button == "=":
+                self.text = str(eval(self.text.strip()))
+                self.label_input.setText(self.text)
+            elif self.clicked_button.find("Clear") != -1:
+                self.label_input.setText("0")
+                self.text = ""
+            elif self.clicked_button == "🔙":
+                Dell = self.text[:-1]
+                self.label_input.setText(Dell)
+                self.text = Dell
+            else:
+                self.text += self.clicked_button
+                self.label_input.setText(self.text)
+
+            if self.text == "":
+                self.label_input.setText("0")
 
 
+
+        except ZeroDivisionError:
+            self.label_input.setText("Zero division error")
+            self.text = ""
+        except SyntaxError:
+            self.label_input.setText("Syntax Error")
+            self.text = ""
+        except AttributeError:
+            self.label_input.setText("Entered invalid value")
+            self.text = ""
+        except TypeError:
+            self.label_input.setText("Don't press equal two")
+            self.text = ""
+
+        
 app = QApplication(argv)
-# print(app)
 win = window()
 win.show()
 app.exec_()
-
-
-
