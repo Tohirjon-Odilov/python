@@ -1,0 +1,29 @@
+QMainWindow{
+    background-color: white;
+}
+
+QPushButton{
+    /* outline: none; */
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    outline: none;
+    /* border: 0; */
+}
+
+QPushButton:hover{
+    background-color: crimson;
+    color: white;
+}
+
+QPushButton:focus{
+    background-color: yellowgreen;
+    color: white;
+}
+
+QLabel{
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+}

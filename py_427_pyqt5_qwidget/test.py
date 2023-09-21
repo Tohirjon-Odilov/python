@@ -20,7 +20,7 @@ class Calculator(QMainWindow):
         self.result_display = QLineEdit()
         self.result_display.setFixedHeight(40)
         # self.result_display.setAlignment(QtP.AlignRight)
-        # self.layout.addWidget(self.result_display)
+        self.layout.addWidget(self.result_display)
 
         button_grid = [
             ['7', '8', '9', '/'],
@@ -35,7 +35,7 @@ class Calculator(QMainWindow):
             row_layout = QHBoxLayout()
             for button_text in row:
                 button = QPushButton(button_text)
-                # button.clicked.connect(self.on_button_click)
+                button.clicked.connect(self.on_button_click)
                 row_layout.addWidget(button)
             button_layout.addLayout(row_layout)
 
