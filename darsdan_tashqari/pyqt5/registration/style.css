@@ -12,12 +12,12 @@ QPushButton {
     border-radius: 5px;
 }
 
-QLineEdit::placeholder{
-    color: #999;
+/* QLineEdit::placeholder{
+    color: #999
+    
 }
 
 QLineEdit{
     border-width: 2px;
-    color: #999;
     font-size: 14px;
-}
+} */

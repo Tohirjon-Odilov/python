@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Tohirjon",
+        "age": "20",
+        "job": "BackEnd Developer",
+        "hobbies": "Reading Books"
+    },
+    {
+        "name": "Akramjon",
+        "age": "14",
+        "job": "School's boy",
+        "hobbies": "Watching Youtube"
+    },
+    {
+        "name": "Ahrorbek",
+        "age": "18",
+        "job": "School",
+        "hobbies": "Body Building"
+    }
+]
