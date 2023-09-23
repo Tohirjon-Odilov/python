@@ -1,4 +1,5 @@
-def ingliz_convert(num):
+def convert_number(num):
+    num = int(num)
     units = (
         "",
         "one ",
@@ -35,7 +36,7 @@ def ingliz_convert(num):
     )
 
     if num < 0:
-        return "minus " + ingliz_convert(-num)
+        return "minus" + convert_number(-num)
 
     if num < 20:
         return units[num]
@@ -44,25 +45,22 @@ def ingliz_convert(num):
         return tens[num // 10] + units[int(num % 10)]
 
     if num < 1000:
-        return units[num // 100] + "hundred " + ingliz_convert(int(num % 100))
+        return units[num // 100] + "hundred " + convert_number(int(num % 100))
 
     if num < 1000000:
         return (
-            ingliz_convert(num // 1000) + "thousand " + ingliz_convert(int(num % 1000))
+            convert_number(num // 1000) + "thousand " + convert_number(int(num % 1000))
         )
 
     if num < 1000000000:
         return (
-            ingliz_convert(num // 1000000)
+            convert_number(num // 1000000)
             + "million "
-            + ingliz_convert(int(num % 1000000))
+            + convert_number(int(num % 1000000))
         )
 
     return (
-        ingliz_convert(num // 1000000000)
+        convert_number(num // 1000000000)
         + "billion "
-        + ingliz_convert(int(num % 1000000000))
+        + convert_number(int(num % 1000000000))
     )
-
-
-print(ingliz_convert(15000))
