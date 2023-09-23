@@ -1,0 +1,52 @@
+[
+    {
+      "question": "Python asoschisi kim?",
+      "variants": [
+        "Alisher Navoiy",
+        "Chingizxon",
+        "Bill Gates",
+        "Guido van Rossum"
+      ],
+      "correct_answer": "Guido van Rossum"
+    },
+    {
+      "question": "O'zbekiston birinchi prezidenti kim?",
+      "variants": [
+        "Jahongir Otajonov",
+        "Maykl Jekson",
+        "Islom Karimov",
+        "Abdulla Oripov"
+      ],
+      "correct_answer": "Islom Karimov"
+    },
+    {
+      "question": "Nimaning 5 ta barmog'i bor, tirnoqlari yo'q?",
+      "variants": [
+        "Qo'lqop",
+        "Haykal qo'li",
+        "Besh barmoq taomi",
+        "Chaqaloq qo'li"
+      ],
+      "correct_answer": "Qo'lqop"
+    },
+    {
+      "question": "U qush o'z qanotlari yordamida suv tagida suza oladi.\nTezdligi esa 10 m/s. Eng qizig'i, u qush shuncha tez suzsa ham\nucha olmaydi. Bu qaysi qush?",
+      "variants": [
+        "Baliq",
+        "Chag'alay",
+        "Pingivin",
+        "Soqov qush"
+      ],
+      "correct_answer": "Pingivin"
+    },
+    {
+      "question": "Oson savol: Qaysi qushning ko'zlari miyasidan kattaroq bo'ladi?",
+      "variants": [
+        "Tuyaqush",
+        "Kalibri",
+        "Qarg'a",
+        "Kabutar"
+      ],
+      "correct_answer": "Tuyaqush"
+    }
+]
