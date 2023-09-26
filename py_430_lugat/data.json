@@ -1,5 +1,15 @@
 {
     "book": "kitob",
     "pen": "ruchka",
-    "pencil": "qalam"
+    "pencil": "qalam",
+    "apple": "olma",
+    "hello": "Salom",
+    "header": "sarlavha",
+    "well": "yaxshi",
+    "pupil": "o'quvchi",
+    "good": "yaxshi",
+    "eye": "ko'z",
+    "melon": "qovun",
+    "watermelon": "tarvuz",
+    "water": "suv"
 }

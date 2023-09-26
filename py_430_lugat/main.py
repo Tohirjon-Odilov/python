@@ -10,3 +10,7 @@ app = QApplication(sys.argv)
 menu = MenuWindow()
 
 sys.exit(app.exec_())
+
+
+
+

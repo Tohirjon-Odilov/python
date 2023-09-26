@@ -262,10 +262,20 @@ class SearchWindow(Window):
             self.completer = QCompleter(self.lst)
         self.edit_search.setCompleter(self.completer)
         
+           
+        
     def searched_word(self):
         translator = Translator()
-        user = translator.translate(self.edit_search.text(), dest="uz")
-        self.qlw_search.addItem(user.text)
+        english_word = self.edit_search.text()
+        user = translator.translate(english_word, dest="uz")
+        format_data = f"{english_word}  -->  {user.text} "
+        self.qlw_search.addItem(format_data)
+        with open("./data.json", "r+") as file:
+            self.old_data = file.read()
+            self.old_data = loads(self.old_data)
+            file.seek(0)
+            self.old_data[english_word]= user.text
+            file.write(dumps(self.old_data, indent=4))
         
         # menu button
         self.btn_menu.clicked.connect(self.return_menu)
