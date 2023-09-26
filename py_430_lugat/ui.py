@@ -262,7 +262,6 @@ class SearchWindow(Window):
             self.completer = QCompleter(self.lst)
         self.edit_search.setCompleter(self.completer)
         
-           
         
     def searched_word(self):
         translator = Translator()
