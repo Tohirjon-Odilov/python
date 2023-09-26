@@ -1,8 +1,9 @@
 from json import dumps, loads
+from googletrans import Translator
 import sys
 
-from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
-from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QPushButton,QCompleter
 from PyQt5.Qt import Qt 
 
 from css import *
@@ -62,6 +63,7 @@ class NewWordWindow(Window):
         super().__init__()
         self.setWindowTitle("Add New Word")
         self.__initUI()
+        self.show()
     
     def __initUI(self):
         self.v_box = QVBoxLayout()
@@ -84,8 +86,6 @@ class NewWordWindow(Window):
                            font-size: 16px;
                            """)
         
-        # connect function
-        self.btn_save.clicked.connect(self.write_word_file)
 
         self.btn_menu = FooterButton('Menu')
         self.btn_list = FooterButton('List of Words')
@@ -107,18 +107,40 @@ class NewWordWindow(Window):
 
         self.setLayout(self.v_box)
     
+        # connect function to button
+        self.btn_save.clicked.connect(self.write_word_file)
+        
+        # menu button
+        self.btn_menu.clicked.connect(self.return_menu)
+        
+        # list button
+        self.btn_list.clicked.connect(self.go_list_words)
+
+        # search button
+        self.btn_search.clicked.connect(self.go_search)
+        
     def write_word_file(self):
         with open("data.json", "r+") as file:
             self.data = file.read()
             self.data = loads(self.data)
             file.seek(0)
-            self.data.append({self.edit_eng.text(): self.edit_uzb.text()})
-            file.write(dumps(self.data))
+            self.data[self.edit_eng.text()]= self.edit_uzb.text()
+            file.write(dumps(self.data, indent=4))
             self.edit_eng.clear()
             self.edit_uzb.clear()
-            
 
-
+    def return_menu(self):
+        self.close()
+        self.menu = MenuWindow()
+        
+    def go_list_words(self):
+        self.close()
+        self.list_words = ListOfWordsWindow()
+        
+    def go_search(self):
+        self.close()
+        self.search = SearchWindow()
+        
 class ListOfWordsWindow(Window):
     def __init__(self):
         super().__init__()
@@ -162,6 +184,36 @@ class ListOfWordsWindow(Window):
 
         self.setLayout(self.v_box)
 
+        with open("./data.json", "r") as file:
+            self.data = file.read()
+            self.data = loads(self.data)
+            for key, elem in self.data.items():
+                self.qlw_eng.addItem(key)
+                self.qlw_uzb.addItem(elem)
+    
+    
+        # menu button
+        self.btn_menu.clicked.connect(self.return_menu)
+        
+        # list button
+        self.btn_new_word.clicked.connect(self.go_new_word)
+
+        # search button
+        self.btn_search.clicked.connect(self.go_search)
+        
+    def return_menu(self):
+        self.close()
+        self.menu = MenuWindow()
+        
+    def go_new_word(self):
+        self.close()
+        self.add_new_words = NewWordWindow()
+        
+    def go_search(self):
+        self.close()
+        self.search = SearchWindow()
+        
+
 class SearchWindow(Window):
     def __init__(self):
         super().__init__()
@@ -180,6 +232,7 @@ class SearchWindow(Window):
 
         self.btn_search = FooterButton('search')
         self.btn_search.setFixedHeight(35)
+        self.btn_search.clicked.connect(self.searched_word)
 
         self.qlw_search = QLW()
 
@@ -190,7 +243,6 @@ class SearchWindow(Window):
         self.h_box_search.addWidget(self.edit_search)
         self.h_box_search.addWidget(self.btn_search)
 
-
         self.h_box_btns.addWidget(self.btn_menu)
         self.h_box_btns.addWidget(self.btn_list)
         self.h_box_btns.addWidget(self.btn_new_word)
@@ -200,8 +252,39 @@ class SearchWindow(Window):
         self.v_box.addLayout(self.h_box_btns)
 
         self.setLayout(self.v_box)
+        
+        with open("./data.json", "r") as file:
+            self.data = file.read()
+            self.data = loads(self.data)
+            self.lst = list()
+            for i in self.data.keys():
+                self.lst.append(i)
+            self.completer = QCompleter(self.lst)
+        self.edit_search.setCompleter(self.completer)
+        
+    def searched_word(self):
+        translator = Translator()
+        user = translator.translate(self.edit_search.text(), dest="uz")
+        self.qlw_search.addItem(user.text)
+        
+        # menu button
+        self.btn_menu.clicked.connect(self.return_menu)
+        
+        # list button
+        self.btn_list.clicked.connect(self.go_list_words)
 
-
-
-
-
+        # search button
+        self.btn_new_word.clicked.connect(self.go_new_word)
+        
+    def return_menu(self):
+        self.close()
+        self.menu = MenuWindow()
+        
+    def go_list_words(self):
+        self.close()
+        self.list_words = ListOfWordsWindow()
+        
+    def go_new_word(self):
+        self.close()
+        self.new_word = NewWordWindow()
+        

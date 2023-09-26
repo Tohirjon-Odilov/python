@@ -5,6 +5,7 @@ class QLW(QListWidget):
     def __init__(self):
         super().__init__()
         self.setStyleSheet("""background: #fff; 
+                           color: black;
                            border: 1px solid; 
                            border-radius: 15px;
                            font-size: 20px;

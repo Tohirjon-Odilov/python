@@ -1,1 +1,5 @@
-[{"book": "kitob"}, {"pen": "ruchka"}]
+{
+    "book": "kitob",
+    "pen": "ruchka",
+    "pencil": "qalam"
+}
