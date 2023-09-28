@@ -27,7 +27,8 @@ class main_window(QWidget):
                     padding-bottom: 20px;
                     font-weight: 900;
                     background-color: royalblue;
-                    border-radius: 10px;                   
+                    border-radius: 10px; 
+                    color: white;                  
                 """)
             self.btn.clicked.connect(self._button)
             self.h_box.addWidget(self.btn)
@@ -40,19 +41,24 @@ class main_window(QWidget):
 
     def _button(self):
         btn = self.btn.sender()
-        if btn in self.matrix_el:
-            if self.is_true:
-                btn.setText("o")
-                self.is_true = False
+        # print(btn.text())
+        try:
+            if btn in self.matrix_el:
+                # print("kirdi")
+                if self.is_true:
+                    btn.setText("o")
+                    self.is_true = False
+                else:
+                    btn.setText("x")
+                    self.is_true = True
+                btn.setEnabled(False)
+                # print(self.matrix_el.index(btn))
+                self.matrix_id.remove(self.matrix_el.index(btn)+1)
+                # pri   nt(self.matrix_id, self.matrix_el.index(btn)+1)
             else:
-                btn.setText("x")
-                self.is_true = True
-            # btn.setEnabled(False)
-            # print(self.matrix_el.index(btn))
-            self.matrix_id.remove(self.matrix_el.index(btn)+1)
-            # print(self.matrix_id, self.matrix_el.index(btn)+1)
-        else:
-            print("o'chirib tashlandi")
+                print("o'chirib tashlandi")
+        except Exception as e:
+            print(e)
         
         # if is_true:
             # ai = choice(self.matrix_id)
