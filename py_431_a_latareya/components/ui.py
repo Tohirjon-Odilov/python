@@ -2,6 +2,7 @@ from random import randint
 from sys import argv
 from time import sleep
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
+from PyQt5.QtCore import QTimer
 
 from cls_style import label
 
@@ -123,18 +124,18 @@ class mainWindow(QWidget):
             self.restart()
         i = 6-(len(self.lst)%6)
         # self.label_window.setText(str(i<6)+" "+str(6-(len(self.lst)%6)))
-        # ist = False
+        ist = False
         while i != 0:
             rand_num = randint(1,36)
             ##! takrorlanmas raqam
-            # for j in self.lst:
-            #     if j == rand_num:
-            #         ist = True
-            #         break
-            # if ist:
-            #     ist = False
-            #     # self.message(str(rand_num))
-            #     continue
+            for j in self.lst:
+                if j == rand_num:
+                    ist = True
+                    break
+            if ist:
+                ist = False
+                # self.message(str(rand_num))
+                continue
             if len(self.lst) < 6:
                 self.lst.append(rand_num)
                 num = " ".join(list(str(ele) for ele in self.lst))
@@ -200,18 +201,22 @@ class mainWindow(QWidget):
     def check(self):
         self.isTrue = True
         von = str()
+        lst = list(range(1,37))
+        # print(lst)
         if self.selected_numbers:
-            self.label_circle_1.setText(str(randint(1,36)))
-            # sleep(0.3)
-            self.label_circle_2.setText(str(randint(1,36)))
-            # sleep(0.3)
-            self.label_circle_3.setText(str(randint(1,36)))
-            # sleep(0.3)
-            self.label_circle_4.setText(str(randint(1,36)))
-            # sleep(0.3)
-            self.label_circle_5.setText(str(randint(1,36)))
-            # sleep(0.3)
-            self.label_circle_6.setText(str(randint(1,36)))
+            time = QTimer(self)
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_1.setText(str(rem))
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_2.setText(str(rem))
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_3.setText(str(rem))
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_4.setText(str(rem))
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_5.setText(str(rem))
+            rem = lst.pop(randint(0,len(lst)))
+            self.label_circle_6.setText(str(rem))
             von += self.label_circle_1.text() + " "
             von += self.label_circle_2.text() + " "
             von += self.label_circle_3.text() + " "
@@ -232,7 +237,7 @@ class mainWindow(QWidget):
         self.selected_numbers = str()
         self.entered_number_count = 0
         self.label_entered_number.setText("Click on one of numbers below")
-        self.label_window.clear(    )
+        self.label_window.clear()
         self.label_circle_1.setText(' ')
         self.label_circle_2.setText(' ')
         self.label_circle_3.setText(' ')
