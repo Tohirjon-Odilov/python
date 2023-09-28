@@ -7,10 +7,10 @@ class main_window(QWidget):
         super().__init__()
         self.setWindowTitle("TIC TAC TOE")
         self.setFixedSize(500, 500)
-        # self.matrix = [1,2,3,
-                    #    4,5,6,
-                    #    7,8,9]
-        self.matrix = list()
+        self.matrix = [1,2,3,
+                       4,5,6,
+                       7,8,9]
+        # self.matrix = list()
         self._ui()
         
     # create ui
