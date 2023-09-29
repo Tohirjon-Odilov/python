@@ -1,6 +1,5 @@
 from random import randint
 from sys import argv
-from time import sleep
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
 from PyQt5.QtCore import QTimer
 
@@ -209,6 +208,7 @@ class mainWindow(QWidget):
             self.label_circle_1.setText(str(rem))
             rem = lst.pop(randint(0,len(lst)))
             self.label_circle_2.setText(str(rem))
+            time.start(1000)
             rem = lst.pop(randint(0,len(lst)))
             self.label_circle_3.setText(str(rem))
             rem = lst.pop(randint(0,len(lst)))
