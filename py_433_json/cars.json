@@ -1,0 +1,260 @@
+[
+    {
+      "name": "Car Model 1",
+      "capacity": 5,
+      "madeIn": "United States",
+      "maxSpeed": 200,
+      "color": "Blue",
+      "price": 25000
+    },
+    {
+      "name": "Car Model 2",
+      "capacity": 4,
+      "madeIn": "Germany",
+      "maxSpeed": 220,
+      "color": "Red",
+      "price": 35000
+    },
+    {
+      "name": "Motorcycle Model 1",
+      "capacity": 2,
+      "madeIn": "Japan",
+      "maxSpeed": 250,
+      "color": "Black",
+      "price": 15000
+    },
+    {
+      "name": "SUV Model 1",
+      "capacity": 7,
+      "madeIn": "United States",
+      "maxSpeed": 180,
+      "color": "Silver",
+      "price": 40000
+    },
+    {
+      "name": "Truck Model 1",
+      "capacity": 3,
+      "madeIn": "Canada",
+      "maxSpeed": 160,
+      "color": "Green",
+      "price": 50000
+    },
+    {
+      "name": "Car Model 3",
+      "capacity": 5,
+      "madeIn": "United Kingdom",
+      "maxSpeed": 210,
+      "color": "White",
+      "price": 28000
+    },
+    {
+      "name": "Motorcycle Model 2",
+      "capacity": 2,
+      "madeIn": "Italy",
+      "maxSpeed": 240,
+      "color": "Yellow",
+      "price": 17000
+    },
+    {
+      "name": "Car Model 4",
+      "capacity": 4,
+      "madeIn": "France",
+      "maxSpeed": 230,
+      "color": "Orange",
+      "price": 32000
+    },
+    {
+      "name": "Truck Model 2",
+      "capacity": 3,
+      "madeIn": "Australia",
+      "maxSpeed": 150,
+      "color": "Brown",
+      "price": 55000
+    },
+    {
+      "name": "Car Model 5",
+      "capacity": 5,
+      "madeIn": "China",
+      "maxSpeed": 190,
+      "color": "Purple",
+      "price": 22000
+    },
+    {
+      "name": "Motorcycle Model 3",
+      "capacity": 2,
+      "madeIn": "India",
+      "maxSpeed": 220,
+      "color": "Gray",
+      "price": 13000
+    },
+    {
+      "name": "SUV Model 2",
+      "capacity": 7,
+      "madeIn": "South Korea",
+      "maxSpeed": 175,
+      "color": "Cyan",
+      "price": 42000
+    },
+    {
+      "name": "Car Model 6",
+      "capacity": 4,
+      "madeIn": "Mexico",
+      "maxSpeed": 200,
+      "color": "Magenta",
+      "price": 29000
+    },
+    {
+      "name": "Truck Model 3",
+      "capacity": 3,
+      "madeIn": "Russia",
+      "maxSpeed": 160,
+      "color": "Teal",
+      "price": 48000
+    },
+    {
+      "name": "Car Model 7",
+      "capacity": 5,
+      "madeIn": "Brazil",
+      "maxSpeed": 205,
+      "color": "Lime",
+      "price": 26000
+    },
+    {
+      "name": "Motorcycle Model 4",
+      "capacity": 2,
+      "madeIn": "Spain",
+      "maxSpeed": 230,
+      "color": "Indigo",
+      "price": 18000
+    },
+    {
+      "name": "Car Model 8",
+      "capacity": 4,
+      "madeIn": "Sweden",
+      "maxSpeed": 220,
+      "color": "Pink",
+      "price": 33000
+    },
+    {
+      "name": "SUV Model 3",
+      "capacity": 7,
+      "madeIn": "Netherlands",
+      "maxSpeed": 175,
+      "color": "Olive",
+      "price": 41000
+    },
+    {
+      "name": "Truck Model 4",
+      "capacity": 3,
+      "madeIn": "Switzerland",
+      "maxSpeed": 155,
+      "color": "Maroon",
+      "price": 52000
+    },
+    {
+      "name": "Car Model 9",
+      "capacity": 5,
+      "madeIn": "Argentina",
+      "maxSpeed": 195,
+      "color": "Violet",
+      "price": 24000
+    },
+    {
+      "name": "Motorcycle Model 5",
+      "capacity": 2,
+      "madeIn": "South Africa",
+      "maxSpeed": 220,
+      "color": "Crimson",
+      "price": 16000
+    },
+    {
+      "name": "Car Model 10",
+      "capacity": 4,
+      "madeIn": "Greece",
+      "maxSpeed": 230,
+      "color": "Turquoise",
+      "price": 31000
+    },
+    {
+      "name": "Truck Model 5",
+      "capacity": 3,
+      "madeIn": "Turkey",
+      "maxSpeed": 158,
+      "color": "Beige",
+      "price": 54000
+    },
+    {
+      "name": "Car Model 11",
+      "capacity": 5,
+      "madeIn": "Poland",
+      "maxSpeed": 200,
+      "color": "Gold",
+      "price": 27000
+    },
+    {
+      "name": "Motorcycle Model 6",
+      "capacity": 2,
+      "madeIn": "Thailand",
+      "maxSpeed": 240,
+      "color": "Silver",
+      "price": 17500
+    },
+    {
+      "name": "SUV Model 4",
+      "capacity": 7,
+      "madeIn": "New Zealand",
+      "maxSpeed": 178,
+      "color": "Bronze",
+      "price": 43000
+    },
+    {
+      "name": "Car Model 12",
+      "capacity": 4,
+      "madeIn": "Singapore",
+      "maxSpeed": 215,
+      "color": "Platinum",
+      "price": 30000
+    },
+    {
+      "name": "Truck Model 6",
+      "capacity": 3,
+      "madeIn": "Chile",
+      "maxSpeed": 163,
+      "color": "Copper",
+      "price": 51000
+    },
+    {
+      "name": "Car Model 13",
+      "capacity": 5,
+      "madeIn": "Israel",
+      "maxSpeed": 198,
+      "color": "Rose Gold",
+      "price": 26000
+    },
+    {
+      "name": "Motorcycle Model 7",
+      "capacity": 2,
+      "madeIn": "Ireland",
+      "maxSpeed": 230,
+      "color": "Emerald",
+      "price": 18500
+    },
+    {
+      "name": "Car Model 14",
+      "capacity": 4,
+      "madeIn": "Austria",
+      "maxSpeed": 225,
+      "color": "Sapphire",
+      "price": 32000
+    },
+    {
+      "name": "SUV Model 5",
+      "capacity": 7,
+      "madeIn": "Portugal",
+      "maxSpeed": 172,
+      "color": "Ruby",
+      "price": 41000
+    }
+  ]
+  
+  
