@@ -1,0 +1,36 @@
+SQL 
+	Free: MySQL, SQLite, PostgreSQL
+	Oracle, Microsoft SQl Server  
+
+NoSQL
+	Mongo DB, Casandra, Redis
+
+
+SQL - Structured Query Language
+
+Declarative Language
+
+DDL - Data Definition Language
+	CREATE –YASAMOQ Ma’lumotlar bazasida yangi jadval,jadval ko’rinishi yoki boshqa obyekt yaratadi.
+	ALTER- O’zgartirish kiritish. Jadvalda mavjud ma’lumotlar bazasi obyektini o’zgartiradi.
+	DROP- butun jadvalni, jadval ko’rinishini yoki ma’lumotlar bazasidagi boshqa obyektlarni o'chiradi.
+
+DML - Data Manipulation Language
+	Malumotlarni o'zgartira olish, o'chiqish, qo'shish. 
+	INSERT- KIRITMOQ. Yozuvni yaratadi
+	UPDATE- YANGILASH.Yozuvlarni o’zgartiradi.
+	DELETE- O’chirish. Yozuvlarni yo’q qiladi.
+
+DCL - Data Control Language
+	Malumotlarni korsatishni boshqara olish. Yani chiqarishda kontrol qilish.
+	Foydalanuvchiga kirish huquqini berish yoki bekor qilish uchun ishlatiladi.
+	GRANT- Foydalanuvchi uchun imtiyoz beradi.
+	REVOKE- Qayta ko’rib chiqadi. Foydalanuvchiga berilgan imtiyozlarni bekor qiladi.
+
+TCL - Transaction Control Language
+	COMMIT - Jadvaldagi o'zgarishlarni saqlash uchun
+	ROLLBACK - Jadvaldagi o'zgarishlarni ortga qaytarish uchun.
+
+DQL - Data Query Language
+	So'rovlar qila olish SELECT
+	SELECT-TANLASH. Bir yoki bir nechta jadvaldan ma’lummotlarni olish.
