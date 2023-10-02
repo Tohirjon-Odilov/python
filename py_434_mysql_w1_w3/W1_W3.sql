@@ -36,98 +36,98 @@ VALUES
     ('ASUS', 'Chromebook', 'Intel Pentium', 1.2, 4, 'Kali purple', 549.99);
 
 -- 2. Har bir <brand>dan kamida 2 ta qaytarilishi shart
-SELECT brand, COUNT(*) AS brand_count
-FROM computers
-GROUP BY brand
-HAVING brand_count >= 2;
+-- SELECT brand, COUNT(*) AS brand_count
+-- FROM computers
+-- GROUP BY brand
+-- HAVING brand_count >= 2;
 
 -- 3. <cpu> kamida 2 marta qaytarilishi shart
-SELECT cpu, COUNT(*) AS cpu_count
-FROM computers
-GROUP BY cpu
-HAVING cpu_count >= 2;
+-- SELECT cpu, COUNT(*) AS cpu_count
+-- FROM computers
+-- GROUP BY cpu
+-- HAVING cpu_count >= 2;
 
 
 SELECT * FROM computers ORDER BY price DESC LIMIT 1;
 
-SELECT * FROM computers ORDER BY price ASC LIMIT 1;
+-- SELECT * FROM computers ORDER BY price ASC LIMIT 1;
 
-SELECT frequency FROM computers WHERE price BETWEEN 400 AND 1000 AND cpu LIKE '%Intel%';
+-- SELECT frequency FROM computers WHERE price BETWEEN 400 AND 1000 AND cpu LIKE '%Intel%';
 
-SELECT COUNT(*) AS brand_count FROM computers WHERE brand = 'Apple';
+-- SELECT COUNT(*) AS brand_count FROM computers WHERE brand = 'Apple';
 
-SELECT * FROM computers WHERE os Like 'Windows%' AND ram = 8 AND brand = 'ASUS' ORDER BY price;
-
-
-
-
--- w2
-
--- Ma'lumotlar bazasini yaratish
-CREATE DATABASE UNIVERSITET;
-USE UNIVERSITET;
-
--- Talaba nomli jadvalni yaratish
-CREATE TABLE talaba (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    talaba_ismi VARCHAR(255) NOT NULL,
-    talaba_kursi INT NOT NULL,
-    talaba_stipendiyasi DECIMAL(8, 2) NOT NULL
-);
-
--- 10 ta ma'lumotni qo'shish
-INSERT INTO talaba (talaba_ismi, talaba_kursi, talaba_stipendiyasi) VALUES
-    ('Talaba1', 1, 500.00),
-    ('Talaba2', 2, 600.00),
-    ('Talaba3', 1, 450.00),
-    ('Talaba4', 3, 700.00),
-    ('Talaba5', 4, 750.00),
-    ('Talaba6', 1, 500.00),
-    ('Talaba7', 2, 600.00),
-    ('Talaba8', 3, 700.00),
-    ('Talaba9', 1, 450.00),
-    ('Talaba10', 4, 750.00);
-
--- 1-so'rov: Barcha talabalar kursini 1taga oshiring va 4-kurslarni o'chirib tashlang
-UPDATE talaba SET talaba_kursi = talaba_kursi + 1 WHERE talaba_kursi < 4;
-DELETE FROM talaba WHERE talaba_kursi = 4;
-
--- 2-so'rov: Har bir kursda nechta talabalar o'qishini aniqlash va chiqarish
-SELECT talaba_kursi, COUNT(*) AS talabalar_soni FROM talaba GROUP BY talaba_kursi;
+-- SELECT * FROM computers WHERE os Like 'Windows%' AND ram = 8 AND brand = 'ASUS' ORDER BY price;
 
 
 
 
--- w3
+-- -- w2
 
--- Ma'lumotlar bazasini yaratish
-CREATE DATABASE MILLIY_TAOMLAR;
-USE MILLIY_TAOMLAR;
+-- -- Ma'lumotlar bazasini yaratish
+-- CREATE DATABASE UNIVERSITET;
+-- USE UNIVERSITET;
 
--- Ovqat nomli jadvalni yaratish
-CREATE TABLE ovqat (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    taom_nomi VARCHAR(255) NOT NULL,
-    taom_masaliqlari TEXT
-);
+-- -- Talaba nomli jadvalni yaratish
+-- CREATE TABLE talaba (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     talaba_ismi VARCHAR(255) NOT NULL,
+--     talaba_kursi INT NOT NULL,
+--     talaba_stipendiyasi DECIMAL(8, 2) NOT NULL
+-- );
 
--- 10 ta ma'lumotni qo'shish
-INSERT INTO ovqat (taom_nomi, taom_masaliqlari) VALUES
-    ("Manti", "Go'sht, un, tuz, piyoz"),
-    ("Lag`mon", "Go'sht, pomidor, piyoz, sabzi, piyoz, ziravorlar"),
-    ("Somsa", "Go'sht, un, tuz, piyoz"),
-    ("Shashlik", "Go'sht, piyoz, sabzi"),
-    ("Palov", "Go'sht, bug`doy, piyoz, mosh, guruch"),
-    ("Dimlama", "Go'sht, sabzi, piyoz, mosh"),
-    ("Sho'rva", "Go'sht, sabzavotlar, piyoz"),
-    ("Mastava", "Go'sht, piyoz, mosh, guruch, sabzi"),
-    ("Grechka", "Go'sht, piyoz, grechka, sabzi, kartoshka, zira"),
-    ("Norin", "Un, go'sht, piyoz, sabzavotlar");
+-- -- 10 ta ma'lumotni qo'shish
+-- INSERT INTO talaba (talaba_ismi, talaba_kursi, talaba_stipendiyasi) VALUES
+--     ('Talaba1', 1, 500.00),
+--     ('Talaba2', 2, 600.00),
+--     ('Talaba3', 1, 450.00),
+--     ('Talaba4', 3, 700.00),
+--     ('Talaba5', 4, 750.00),
+--     ('Talaba6', 1, 500.00),
+--     ('Talaba7', 2, 600.00),
+--     ('Talaba8', 3, 700.00),
+--     ('Talaba9', 1, 450.00),
+--     ('Talaba10', 4, 750.00);
+
+-- -- 1-so'rov: Barcha talabalar kursini 1taga oshiring va 4-kurslarni o'chirib tashlang
+-- UPDATE talaba SET talaba_kursi = talaba_kursi + 1 WHERE talaba_kursi < 4;
+-- DELETE FROM talaba WHERE talaba_kursi = 4;
+
+-- -- 2-so'rov: Har bir kursda nechta talabalar o'qishini aniqlash va chiqarish
+-- SELECT talaba_kursi, COUNT(*) AS talabalar_soni FROM talaba GROUP BY talaba_kursi;
 
 
--- 1-so'rovda taom_nomi a harfi bilan tugagan ovqatlarni chiqaring.
-SELECT * FROM ovqat WHERE taom_nomi LIKE '%a';
 
 
--- 2-so'rovda masaliqlarida guruch qatnashgan ovqatlarni chiqaring.
-SELECT * FROM ovqat WHERE taom_masaliqlari LIKE "%guruch%"
+-- -- w3
+
+-- -- Ma'lumotlar bazasini yaratish
+-- CREATE DATABASE MILLIY_TAOMLAR;
+-- USE MILLIY_TAOMLAR;
+
+-- -- Ovqat nomli jadvalni yaratish
+-- CREATE TABLE ovqat (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     taom_nomi VARCHAR(255) NOT NULL,
+--     taom_masaliqlari TEXT
+-- );
+
+-- -- 10 ta ma'lumotni qo'shish
+-- INSERT INTO ovqat (taom_nomi, taom_masaliqlari) VALUES
+--     ("Manti", "Go'sht, un, tuz, piyoz"),
+--     ("Lag`mon", "Go'sht, pomidor, piyoz, sabzi, piyoz, ziravorlar"),
+--     ("Somsa", "Go'sht, un, tuz, piyoz"),
+--     ("Shashlik", "Go'sht, piyoz, sabzi"),
+--     ("Palov", "Go'sht, bug`doy, piyoz, mosh, guruch"),
+--     ("Dimlama", "Go'sht, sabzi, piyoz, mosh"),
+--     ("Sho'rva", "Go'sht, sabzavotlar, piyoz"),
+--     ("Mastava", "Go'sht, piyoz, mosh, guruch, sabzi"),
+--     ("Grechka", "Go'sht, piyoz, grechka, sabzi, kartoshka, zira"),
+--     ("Norin", "Un, go'sht, piyoz, sabzavotlar");
+
+
+-- -- 1-so'rovda taom_nomi a harfi bilan tugagan ovqatlarni chiqaring.
+-- SELECT * FROM ovqat WHERE taom_nomi LIKE '%a';
+
+
+-- -- 2-so'rovda masaliqlarida guruch qatnashgan ovqatlarni chiqaring.
+-- SELECT * FROM ovqat WHERE taom_masaliqlari LIKE "%guruch%"
