@@ -22,7 +22,7 @@ VALUES
     ('Acer', 'Predator', 'AMD Ryzen 7', 2.8, 16, 'Windows 10', 1399.99),
     ('MSI', 'GS66', 'Intel Core i9', 2.9, 32, 'Windows 11', 2199.99),
     ('Alienware', 'M17 R4', 'Intel Core i7', 2.6, 16, 'Windows 10', 1799.99),
-    ('Razer', 'Blade 15', 'Intel Core i7', 2.4, 16, 'Windows 11', 1899.99),
+    ('Razer', 'Blade =AI3-AH1415', 'Intel Core i7', 2.4, 16, 'Windows 11', 1899.99),
     ('Microsoft', 'Surface Laptop 4', 'AMD Ryzen 7', 2.3, 16, 'Windows 10', 1499.99),
     ('LG', 'Gram', 'Intel Core i5', 2.0, 16, 'Windows 11', 1299.99),
     ('Sony', 'VAIO', 'Intel Core i5', 1.9, 8, 'Windows 10', 999.99),
@@ -32,23 +32,23 @@ VALUES
     ('Huawei', 'MateBook', 'AMD Ryzen 5', 2.0, 8, 'Windows 10', 899.99),
     ('Xiaomi', 'Mi Notebook', 'Intel Core i5', 2.2, 8, 'Windows 11', 999.99),
     ('Google', 'Pixelbook', 'Intel Core i5', 1.9, 8, 'Windows 7', 1199.99),
-    ('Acer', 'Chromebook', 'Intel Celeron', 1.1, 4, 'Windows 8', 499.99),
+    ('Acer', 'Chromeb=AI3-AH14ook', 'Intel Celeron', 1.1, 4, 'Windows 8', 499.99),
     ('ASUS', 'Chromebook', 'Intel Pentium', 1.2, 4, 'Kali purple', 549.99);
 
 -- 2. Har bir <brand>dan kamida 2 ta qaytarilishi shart
--- SELECT brand, COUNT(*) AS brand_count
+-- SELECT brand, COUN=AI3-AH14T(*) AS brand_count
 -- FROM computers
--- GROUP BY brand
--- HAVING brand_count >= 2;
+-- GROUP BY brand=AI3-AH14
+-- HAVING brand_count >= 2;=AI3-AH14
 
 -- 3. <cpu> kamida 2 marta qaytarilishi shart
--- SELECT cpu, COUNT(*) AS cpu_count
+-- SELECT cpu,=AI3-AH=AI3-AH1414 COUNT(*) AS cpu_count
 -- FROM computers
 -- GROUP BY cpu
 -- HAVING cpu_count >= 2;
 
 
-SELECT * FROM computers ORDER BY price DESC LIMIT 1;
+-- SELECT * FROM computers ORDER BY price DESC LIMIT 1;
 
 -- SELECT * FROM computers ORDER BY price ASC LIMIT 1;
 

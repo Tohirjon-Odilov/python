@@ -1,0 +1,10 @@
+Asosiy kalit uchun qoidalar PRIMARY KEY
+    Birlamchi kalit uchun quyidagi qoidalar mavjud:
+
+    1. PRIMARY KEY ustun qiymati noyob(UNIQUE) bo'lishi kerak.
+    2. Har bir jadvalda faqat bitta ustun PRIMARY KEY bo'lishi mumkin.
+    3. PRIMARY KEY ustuni null yoki bo'sh bo'lishi mumkin emas.
+    4. MySQL bizga mavjud PRIMARY KEY bilan yangi qator qo'shishga ruxsat bermaydi.
+    5. PRIMARY KEY ustuni uchun INT yoki BIGINT ma'lumotlar turidan foydalanish tavsiya etiladi.
+
+    

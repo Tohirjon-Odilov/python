@@ -60,7 +60,7 @@ SHOW COLUMNS FROM universitydb.student;
 SHOW COLUMNS FROM student IN universitydb;
 
 -- jadvalni to'liq ko'rish.
-SELECT *FROM student;
+SELECT *FROM student;=AI3-AH14
 
 -- jadvalni to'ldirish. 1 - usul. bir qatorli.
 INSERT INTO student (first_name, second_name, age, gender, phone_number) 
