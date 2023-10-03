@@ -2,21 +2,21 @@ CREATE DATABASE najottalimdb;
 
 USE najottalimdb;
 
-CREATE TABLE IF NOT EXISTS course (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-    name VARCHAR(64) UNIQUE
-);
+    CREATE TABLE IF NOT EXISTS course (
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+        name VARCHAR(64) UNIQUE
+    );
 
 
-INSERT INTO course (name) VALUES 
-('NodeJS'),
-('.NET'),
-('Java'),
-('Frontend'),
-('Go'),
-('FLATTER'),
-('PHP'),
-('Fullstack');
+    INSERT INTO course (name) VALUES 
+    ('NodeJS'),
+    ('.NET'),
+    ('Java'),
+    ('Frontend'),
+    ('Go'),
+    ('FLATTER'),
+    ('PHP'),
+    ('Fullstack');
 
 CREATE TABLE IF NOT EXISTS student (
     id SERIAL, -- BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
