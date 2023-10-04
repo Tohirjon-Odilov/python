@@ -109,6 +109,7 @@ SELECT * FROM teachers ORDER BY salary;
 
 -- 9.
 -- SELECT students.name, students.branch, teachers.name, teachers.branch FROM students
+
 -- JOIN teachers ON teachers.branch = students.branch;
 -- ORDER BY students.name;
 
