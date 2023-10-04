@@ -76,6 +76,16 @@ CREATE TABLE teachers (
     branch varchar(50)
 );
 
+INSERT INTO teachers VALUES
+("Ahmad", "Xoliqov", 1200, 2, "Chilonzor"),
+("Aziz", "Shakirov", 2000, 5, "Chilonzor"),
+("Nurzat", "Husanov", 1500, 3, "Chimboy"),
+("Bekzat", "Xoliqov", 1300, 4, "Xadra"),
+("Jasur", "Xoliqov", 1100, 1, "Farg'ona"),
+("Rahim", "Xoliqov", 1000, 1, "Farg'ona"),
+("Sardor", "Xoliqov", 1100, 1, "Farg'ona"),
+("Nurzat", "Husanov", 1500, 3, "Chimboy");
+
 CREATE TABLE students(
     name varchar(50),
     surname varchar(50),
@@ -84,4 +94,21 @@ CREATE TABLE students(
     branch varchar(50)
 );
 
+INSERT INTO students VALUES
+("Tohirjon", "Odilov", 2200, 11, "Chilonzor"),
+("Asadbek", "Faxriddinov", 3200, 11, "Chilonzor"),
+("Akramjon", "Abduvahobov", 2200, 12, "Farg'ona"),
+("Ahrorbek", "Alijonov", 2200, 12, "Farg'ona"),
+("Jasur", "Hamdamov", 1200, 12, "Farg'ona"),
+("Bobomurod", "Artiqaliyev", 3000, 10, "Xadra"),
+("Sardor", "Xoliqov", 1100, 1, "Farg'ona"),
+("Nurzat", "Husanov", 1500, 3, "Chimboy");
+
+-- 1.
+SELECT * FROM teachers ORDER BY salary;
+
+-- 9.
+-- SELECT students.name, students.branch, teachers.name, teachers.branch FROM students
+-- JOIN teachers ON teachers.branch = students.branch;
+-- ORDER BY students.name;
 
