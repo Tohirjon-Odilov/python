@@ -7,10 +7,9 @@ from qtwidgets import PasswordEdit
 from core import *
 
 
+
 class Window(QWidget):
-
     def __init__(self):
-
         super().__init__()
 
         self.setFixedSize(600, 400)
@@ -19,7 +18,6 @@ class Window(QWidget):
         self.show()
 
     def __initUI(self):
-
         self.vBox = QVBoxLayout()
         self.vBox.setAlignment(Qt.AlignCenter)
 
@@ -62,8 +60,8 @@ class Window(QWidget):
 class CreateUserWindow(QWidget):
 
     def __init__(self):
-
         super().__init__()
+
         self.core = Core()
         self.setFixedSize(600, 400)
         self.setWindowTitle('Create user')
@@ -71,7 +69,6 @@ class CreateUserWindow(QWidget):
         self.show()
 
     def __initUI(self):
-
         self.vBox = QVBoxLayout()
         self.vBox.setAlignment(Qt.AlignCenter)
 
@@ -113,6 +110,11 @@ class CreateUserWindow(QWidget):
         uname = self.editUserName.text()
         pwd = self.editPassword.text()
         mobnum = self.editMobileNumber.text()
+        
+        self.editFullName.clear()
+        self.editUserName.clear()
+        self.editPassword.clear()
+        self.editMobileNumber.clear()
 
         if fname and uname and pwd and mobnum:
             user = {
@@ -193,21 +195,18 @@ class ListUsersWindow(QWidget):
 
 
 class UpdateUserWindow(QWidget):
-
     def __init__(self):
-
         super().__init__()
-
+        self.core = Core()
         self.setFixedSize(600, 400)
         self.setWindowTitle('Update user')
         self.__initUI()
         self.show()
 
     def __initUI(self):
-
         self.vBox = QVBoxLayout()
         self.vBox.setAlignment(Qt.AlignCenter)
-
+        self.labelMsg = QLabel()
         self.editID = QLineEdit()
         self.editID.setPlaceholderText('ID')
         self.editFullName = QLineEdit()
@@ -223,6 +222,7 @@ class UpdateUserWindow(QWidget):
         self.btnMenu = QPushButton('Menu')
 
         self.vBox.addStretch()
+        self.vBox.addWidget(self.labelMsg)
         self.vBox.addWidget(self.editID)
         self.vBox.addWidget(self.editFullName)
         self.vBox.addWidget(self.editUserName)
@@ -242,20 +242,42 @@ class UpdateUserWindow(QWidget):
         self.menu = Window()
 
     def updateUser(self):
-        pass
+        userId = self.editID.text()
+        fname = self.editFullName.text()
+        uname = self.editUserName.text()
+        pwd = self.editPassword.text()
+        mobnum = self.editMobileNumber.text()
+        
+        self.editID.clear()
+        self.editFullName.clear()
+        self.editUserName.clear()
+        self.editPassword.clear()
+        self.editMobileNumber.clear()
+
+        if fname and uname and pwd and mobnum:
+            user = {
+                'user id': userId,
+                'full name': fname,
+                'username': uname,
+                'password': pwd,
+                'mobile number': mobnum
+            }
+
+            message = self.core.updatedUser(user)
+            self.labelMsg.setText(str(message))
 
 
 class DeleteUserWindow(QWidget):
     def __init__(self):
         super().__init__()
-
+        
+        self.core = Core()
         self.setFixedSize(600, 400)
         self.setWindowTitle('Delete user')
         self.__initUI()
         self.show()
 
     def __initUI(self):
-
         self.vBox = QVBoxLayout()
         self.vBox.setAlignment(Qt.AlignCenter)
 
@@ -263,8 +285,10 @@ class DeleteUserWindow(QWidget):
         self.editID.setPlaceholderText('ID')
         self.btnDelete = QPushButton('Delete')
         self.btnMenu = QPushButton('Menu')
+        self.labelMsg = QLabel()
 
         self.vBox.addStretch()
+        self.vBox.addWidget(self.labelMsg)
         self.vBox.addWidget(self.editID)
         self.vBox.addWidget(self.btnDelete)
         self.vBox.addStretch()
@@ -280,17 +304,20 @@ class DeleteUserWindow(QWidget):
         self.menu = Window()
 
     def deleteUser(self):
-        pass
+        enteredId = self.editID.text()
+        self.editID.clear()
+        message = self.core.deletedUser(enteredId)
+        self.labelMsg.setText(str(message))
 
 
 app = QApplication(sys.argv)
 
-win = Window()
+# win = Window()
 
 # cU = CreateUserWindow()
 # lU = ListUsersWindow()
 # lU.showAllUsers()
-# UU = UpdateUserWindow()
+UU = UpdateUserWindow()
 # dU = DeleteUserWindow()
 
 sys.exit(app.exec_())
