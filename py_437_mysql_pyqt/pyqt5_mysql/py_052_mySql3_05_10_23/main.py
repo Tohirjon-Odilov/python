@@ -87,11 +87,11 @@ class CreateUserWindow(QWidget):
         self.btnMenu = QPushButton('Menu')
 
         self.vBox.addStretch()
+        self.vBox.addWidget(self.labelMsg)
         self.vBox.addWidget(self.editFullName)
         self.vBox.addWidget(self.editUserName)
         self.vBox.addWidget(self.editPassword)
         self.vBox.addWidget(self.editMobileNumber)
-        self.vBox.addWidget(self.labelMsg)
         self.vBox.addWidget(self.btnSave)
         self.vBox.addStretch()
         self.vBox.addWidget(self.btnMenu)
@@ -185,7 +185,8 @@ class ListUsersWindow(QWidget):
             'username': user[2],
             'password': user[3],
             'mobile number': user[4]},
-            users))
+            users)
+        )
 
         return users
 
@@ -312,12 +313,12 @@ class DeleteUserWindow(QWidget):
 
 app = QApplication(sys.argv)
 
-# win = Window()
+win = Window()
 
 # cU = CreateUserWindow()
 # lU = ListUsersWindow()
 # lU.showAllUsers()
-UU = UpdateUserWindow()
+# UU = UpdateUserWindow()
 # dU = DeleteUserWindow()
 
 sys.exit(app.exec_())

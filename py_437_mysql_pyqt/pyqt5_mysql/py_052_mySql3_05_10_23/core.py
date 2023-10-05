@@ -64,7 +64,6 @@ class Core:
                     mobile_number = "{user['mobile number']}"
                     WHERE id = {user['user id']};
                 '''
-                print(sql)
                 cursor.execute(sql)
         except Exception as err:
             return err
