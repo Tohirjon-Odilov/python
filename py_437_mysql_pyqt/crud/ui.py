@@ -27,7 +27,7 @@ class Window(QWidget):
 
         
         self.setWindowTitle("CRUD APP")
-        self.setFixedSize(1500, 1000)
+        self.setFixedSize(1000, 600)
 
         self.__initUI()
         self.show()
