@@ -66,44 +66,7 @@ SELECT name "ismi", price "narxi", capacity "sig'imi", color "rangi", warranty "
 
 
 ------------- ! W9 ---------------
-CREATE DATABASE School;
-USE School;
-CREATE TABLE teachers (
-    name varchar(50),
-    surname varchar(50),
-    salary int,
-    experience int,
-    branch varchar(50)
-);
-
-INSERT INTO teachers VALUES
-("Ahmad", "Xoliqov", 1200, 2, "Chilonzor"),
-("Aziz", "Shakirov", 2000, 5, "Chilonzor"),
-("Nurzat", "Husanov", 1500, 3, "Chimboy"),
-("Bekzat", "Xoliqov", 1300, 4, "Xadra"),
-("Jasur", "Xoliqov", 1100, 1, "Farg'ona"),
-("Rahim", "Xoliqov", 1000, 1, "Farg'ona"),
-("Sardor", "Xoliqov", 1100, 1, "Farg'ona"),
-("Nurzat", "Husanov", 1500, 3, "Chimboy");
-
-CREATE TABLE students(
-    name varchar(50),
-    surname varchar(50),
-    monthly_payment int,
-    course_duration int,
-    branch varchar(50)
-);
-
-INSERT INTO students VALUES
-("Tohirjon", "Odilov", 2200, 11, "Chilonzor"),
-("Asadbek", "Faxriddinov", 3200, 11, "Chilonzor"),
-("Akramjon", "Abduvahobov", 2200, 12, "Farg'ona"),
-("Ahrorbek", "Alijonov", 2200, 12, "Farg'ona"),
-("Jasur", "Hamdamov", 1200, 12, "Farg'ona"),
-("Bobomurod", "Artiqaliyev", 3000, 10, "Xadra"),
-("Sardor", "Xoliqov", 1100, 1, "Farg'ona"),
-("Nurzat", "Husanov", 1500, 3, "Chimboy");
-
+mount
 -- 1.
 SELECT * FROM teachers ORDER BY salary;
 
