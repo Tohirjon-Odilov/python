@@ -32,8 +32,8 @@ if 0:
     pr = Solution().isPalindrome(121)
     # print(pr)
  
+ 
 # 349. Intersection of Two Arrays
-
 if 0:
     class Solution:
         def intersection(self, nums1: list[int], nums2: list[int]) -> list[int]:
@@ -42,9 +42,28 @@ if 0:
     pr = Solution().intersection([1,2,2,1],[2,2])
     print(pr)           
 
+# 744. Find Smallest Letter Greater Than Target
+if 1:
+    class Solution:
+        def nextGreatestLetter(self, letters: list[str], target: str) -> str:
+            new = letters
+            new.append(target)
+            new = list(set(new))
+            new = sorted(new)
+            try:
+                x = new[new.index(target)+1]
+            except IndexError:
+                x = letters[0]
+            return x
+        
+        
+    print(Solution().nextGreatestLetter(["c","l","f"], "a"))
+    print(Solution().nextGreatestLetter(["c","f","j"], "c"))
+    print(Solution().nextGreatestLetter(["c","f","j"], "d"))
+
+
 if 0:
     # 1351. Count Negative Numbers in a Sorted Matrix
-
     class Solution(object):
         def countNegatives(self, grid:list):
             """
@@ -75,8 +94,8 @@ if 0:
     pr = Solution1().countNegatives([[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]])
     print(pr)
 
-# 2529. Maximum Count of Positive Integer and Negative Integer
 
+# 2529. Maximum Count of Positive Integer and Negative Integer
 if 0:
     class Solution:
         def maximumCount(self, nums: list) -> int:

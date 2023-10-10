@@ -1,25 +1,3 @@
-# 744. Find Smallest Letter Greater Than Target
-
-if 1:
-    class Solution:
-        def nextGreatestLetter(self, letters: list[str], target: str) -> str:
-            new = letters
-            new.append(target)
-            new = list(set(new))
-            new = sorted(new)
-            try:
-                x = new[new.index(target)+1]
-            except IndexError:
-                x = letters[0]
-            return x
-        
-        
-    print(Solution().nextGreatestLetter(["c","l","f"], "a"))
-    print(Solution().nextGreatestLetter(["c","f","j"], "c"))
-    print(Solution().nextGreatestLetter(["c","f","j"], "d"))
-            
-
-
 # 350. Intersection of Two Arrays II
 if 0:
     class Solution:
