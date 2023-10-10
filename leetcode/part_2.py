@@ -115,6 +115,18 @@ if 0:
     pr = Solution1().countNegatives([[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]])
     print(pr)
 
+# 1480. Running Sum of 1d Array
+if 0:
+    class Solution:
+        def runningSum(self, nums: list[int]) -> list[int]:
+            sum = [nums[0]]
+            for i in range(1, len(nums)):
+                sum.append(sum[-1]+nums[i])
+            return sum
+                        
+    print(Solution().runningSum([1,2,3,4])) # [1,3,6,10]
+
+
 # 1572. Matrix Diagonal Sum
 if 0:
     class Solution:
