@@ -43,7 +43,7 @@ if 0:
     print(pr)           
 
 # 744. Find Smallest Letter Greater Than Target
-if 1:
+if 0:
     class Solution:
         def nextGreatestLetter(self, letters: list[str], target: str) -> str:
             new = letters
@@ -112,7 +112,7 @@ if 0:
                                 [7,8,9]]))
 
 # 2418. Sort the People
-if 1:
+if 0:
     class Solution:
         def sortPeople(self, names: list[str], heights: list[int]) -> list[str]:
             lst = list()
@@ -145,3 +145,17 @@ if 0:
     pr = Solution().maximumCount([-2, -1, -1, 1, 2, 3])
     print(pr)
 
+# 2574. Left and Right Sum Differences
+if 0:
+    class Solution:
+        def leftRightDifference(self, nums: list[int]) -> list[int]:
+            rigthsum = sum(nums)
+            leftsum = 0
+            result = list()
+            for i in nums:
+                result.append(abs(rigthsum - leftsum - i))
+                rigthsum -= i
+                leftsum += i
+            return result
+        
+    print(Solution().leftRightDifference([10,4,8,3]))
