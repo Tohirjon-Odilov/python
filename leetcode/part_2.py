@@ -42,6 +42,27 @@ if 0:
     pr = Solution().intersection([1,2,2,1],[2,2])
     print(pr)           
 
+# 350. Intersection of Two Arrays II
+if 1:
+    class Solution:
+        def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
+            i,j = 0, 0
+            result = list()
+            nums1, nums2 = sorted(nums1), sorted(nums2)
+
+            while i < len(nums1) and j < len(nums2):
+                if nums1[i] < nums2[j]:
+                    i += 1
+                elif nums1[i] > nums2[j]:
+                    j += 1
+                else:
+                    result.append(nums1[i])
+                    j += 1
+                    i += 1
+            return result
+    
+    print(Solution().intersect([1,2,2,1], [2,2]))
+
 # 744. Find Smallest Letter Greater Than Target
 if 0:
     class Solution:

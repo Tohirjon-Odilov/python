@@ -1,6 +1,3 @@
-
-        
-
 # 1480. Running Sum of 1d Array
 if 0:
     class Solution:
@@ -14,21 +11,7 @@ if 0:
 # --------------------    
     print(Solution().runningSum([1,2,3,4])) # [1,3,6,10]
 
-# 350. Intersection of Two Arrays II
-if 0:
-    class Solution:
-        def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
-            # x = list(set(nums1) & set(nums2))
-            # a = str(nums1).count("".join(x))
-            # b = str(nums2).count("".join(x))
-            # x = str(x) * int(a if a > b else b)
-            num3 = list()
-            for el in nums1:
-                if el in nums2:
-                    num3.append(el)
-            return num3
-    
-    print(Solution().intersect([1,2,2,1], [2,2]))
+
 
 # 941. Valid Mountain Array
 if 0:
@@ -43,5 +26,7 @@ if 0:
     print(Solution().validMountainArray([2,1])) #False
     print(Solution().validMountainArray([0,3,2,1])) #True
         
+
+
 
 
