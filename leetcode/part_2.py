@@ -94,6 +94,33 @@ if 0:
     pr = Solution1().countNegatives([[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]])
     print(pr)
 
+# 1572. Matrix Diagonal Sum
+if 0:
+    class Solution:
+        def diagonalSum(self, mat: list[list[int]]) -> int:
+            main, reverse, n = list(), list(), len(mat)
+            for i in range(n):
+                main.append(mat[i][i])
+                if i == n-i-1:
+                    continue
+                reverse.append(mat[i][n-i-1])
+            return sum(main) + sum(reverse)
+                
+        
+    print(Solution().diagonalSum([[1,2,3],
+                                [4,5,6],
+                                [7,8,9]]))
+
+# 2418. Sort the People
+if 1:
+    class Solution:
+        def sortPeople(self, names: list[str], heights: list[int]) -> list[str]:
+            lst = list()
+            for i in range(len(heights)):
+                lst.append([names[i], heights[i]])
+            return list(map(lambda a: a[0],sorted(lst, key=lambda x: x[1], reverse=True)))
+        
+    print(Solution().sortPeople(["Mary","John","Emma"], heights = [180,165,170])) 
 
 # 2529. Maximum Count of Positive Integer and Negative Integer
 if 0:

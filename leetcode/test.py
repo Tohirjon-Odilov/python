@@ -1,19 +1,4 @@
-# 1572. Matrix Diagonal Sum
-if 0:
-    class Solution:
-        def diagonalSum(self, mat: list[list[int]]) -> int:
-            main, reverse, n = list(), list(), len(mat)
-            for i in range(n):
-                main.append(mat[i][i])
-                if i == n-i-1:
-                    continue
-                reverse.append(mat[i][n-i-1])
-            return sum(main) + sum(reverse)
-                
-        
-    print(Solution().diagonalSum([[1,2,3],
-                                [4,5,6],
-                                [7,8,9]]))
+
 
 # 1480. Running Sum of 1d Array
 if 0:
