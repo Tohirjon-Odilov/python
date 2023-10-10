@@ -1,3 +1,33 @@
+# 1572. Matrix Diagonal Sum
+if 0:
+    class Solution:
+        def diagonalSum(self, mat: list[list[int]]) -> int:
+            main, reverse, n = list(), list(), len(mat)
+            for i in range(n):
+                main.append(mat[i][i])
+                if i == n-i-1:
+                    continue
+                reverse.append(mat[i][n-i-1])
+            return sum(main) + sum(reverse)
+                
+        
+    print(Solution().diagonalSum([[1,2,3],
+                                [4,5,6],
+                                [7,8,9]]))
+
+# 1480. Running Sum of 1d Array
+if 0:
+    class Solution:
+        def runningSum(self, nums: list[int]) -> list[int]:
+            sum = [nums[0]]
+            for i in range(1, len(nums)):
+                sum.append(sum[-1]+nums[i])
+            return sum
+            
+            
+# --------------------    
+    print(Solution().runningSum([1,2,3,4])) # [1,3,6,10]
+
 # 350. Intersection of Two Arrays II
 if 0:
     class Solution:
@@ -27,3 +57,5 @@ if 0:
     print(Solution().validMountainArray([2,1])) #False
     print(Solution().validMountainArray([0,3,2,1])) #True
         
+
+
