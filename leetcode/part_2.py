@@ -32,6 +32,17 @@ if 0:
     pr = Solution().isPalindrome(121)
     # print(pr)
  
+#  344. Reverse String
+if 0:
+    class Solution:
+        def reverseString(self, s: list[str]) -> None:
+            """
+            Do not return anything, modify s in-place instead.
+            """
+            s.reverse()
+            return s
+        
+    print(Solution().reverseString(["h","e","l","l","o"]))
  
 # 349. Intersection of Two Arrays
 if 0:
