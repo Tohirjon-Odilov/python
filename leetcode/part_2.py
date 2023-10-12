@@ -73,16 +73,7 @@ if 1:
             return result
     
     print(Solution().intersect([1,2,2,1], [2,2]))
-
-# 1816. Truncate Sentence
-if 0:
-    class Solution:
-        def truncateSentence(self, s: str, k: int) -> str:
-            s = s.split()
-            return s if len(s) < k else " ".join(s[:k])
     
-    print(Solution().truncateSentence("Hello how are you Contestant", 4)) #"Hello how are you"
-
 # 744. Find Smallest Letter Greater Than Target
 if 0:
     class Solution:
@@ -146,7 +137,6 @@ if 0:
                         
     print(Solution().runningSum([1,2,3,4])) # [1,3,6,10]
 
-
 # 1572. Matrix Diagonal Sum
 if 0:
     class Solution:
@@ -163,6 +153,15 @@ if 0:
     print(Solution().diagonalSum([[1,2,3],
                                 [4,5,6],
                                 [7,8,9]]))
+
+# 1816. Truncate Sentence
+if 0:
+    class Solution:
+        def truncateSentence(self, s: str, k: int) -> str:
+            s = s.split()
+            return s if len(s) < k else " ".join(s[:k])
+    
+    print(Solution().truncateSentence("Hello how are you Contestant", 4)) #"Hello how are you"
 
 # 2418. Sort the People
 if 0:
