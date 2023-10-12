@@ -93,6 +93,36 @@ if 0:
     print(Solution().nextGreatestLetter(["c","f","j"], "c"))
     print(Solution().nextGreatestLetter(["c","f","j"], "d"))
 
+# 896. Monotonic Array
+if 0:
+    class Solution:
+        def isMonotonic(self, nums: list[int]) -> bool:
+            return True if nums == list(sorted(nums)) or list(sorted(nums))[::-1] == nums else False
+        
+    print(Solution().isMonotonic([1,2,2,3]))
+    print(Solution().isMonotonic([6,5,4,4]))
+    print(Solution().isMonotonic([6,3,4,2]))
+
+# 1122. Relative Sort Array
+if 0:
+    class Solution:
+        def relativeSortArray(self, arr1: list[int], arr2: list[int]) -> list[int]:
+            res = list()
+            for i in range(len(arr2)):
+                for j in range(len(arr1)):
+                    if arr2[i] == arr1[j]:
+                        res.append(arr1[j])
+            arr1.sort()
+            l = list()
+            for i in range(len(arr1)):
+                if not arr1[i] in res:
+                    l.append(arr1[i])
+
+            return res+l
+            
+    
+    print(Solution().relativeSortArray([2,3,1,3,2,4,6,7,9,2,19], [2,1,4,3,9,6]))
+    # [2,2,2,1,4,3,3,9,6,7,19]
 
 if 0:
     # 1351. Count Negative Numbers in a Sorted Matrix
@@ -162,6 +192,32 @@ if 0:
             return s if len(s) < k else " ".join(s[:k])
     
     print(Solution().truncateSentence("Hello how are you Contestant", 4)) #"Hello how are you"
+
+# 2164. Sort Even and Odd Indices Independently
+if 0:
+    class Solution:
+        def sortEvenOdd(self, nums: list[int]) -> list[int]:
+            odd, even, res = list(), list(), list()
+            for i, el in enumerate(nums, 1):
+                if i % 2 == 0:
+                    even.append(el)
+                else:
+                    odd.append(el)
+            odd.sort()
+            even.sort(reverse=True)
+                          
+            try:
+                for i, el in enumerate(odd, 1):
+                    res.append(el)
+                    res.append(even[i])
+            except:
+                res.append(odd.pop())
+                    
+            return res
+        
+    print(Solution().sortEvenOdd([4,1,2,3])) #[2,3,4,1]
+    print(Solution().sortEvenOdd([2,1])) #[2,1]
+    print(Solution().sortEvenOdd([5,39,33,5,12,27,20,45,14,25,32,33,30,30,9,14,44,15,21]))
 
 # 2418. Sort the People
 if 0:
