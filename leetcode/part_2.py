@@ -74,6 +74,15 @@ if 1:
     
     print(Solution().intersect([1,2,2,1], [2,2]))
 
+# 1816. Truncate Sentence
+if 0:
+    class Solution:
+        def truncateSentence(self, s: str, k: int) -> str:
+            s = s.split()
+            return s if len(s) < k else " ".join(s[:k])
+    
+    print(Solution().truncateSentence("Hello how are you Contestant", 4)) #"Hello how are you"
+
 # 744. Find Smallest Letter Greater Than Target
 if 0:
     class Solution:
