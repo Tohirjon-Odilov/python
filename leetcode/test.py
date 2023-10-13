@@ -3,33 +3,9 @@ from click import clear
 
 clear()
 
-# 13. Roman to Integer
-if 1:
-    class Solution:
-        def romanToInt(self, s: str) -> int:
-            romans = {
-                "I": 1,
-                "V": 5,
-                "X": 10,
-                "L": 50,
-                "C": 100,
-                "D": 500,
-                "M": 1000
-            }
-            result, prev_value = 0, 0
-            for i in s[::-1]:
-                value = romans[i]
-                if prev_value > value:
-                    print(f"{prev_value}-{value}={prev_value-value}")
-                    result -= value
-                else:
-                    print(f"{prev_value}+{value}={prev_value+value}")
-                    result += value
-                prev_value = value
-            return result
-    
-    print(Solution().romanToInt("MCMXCIV")) # 1994
-    print(Solution().romanToInt("LVIII")) # 58
+
+        
+
         
 
 

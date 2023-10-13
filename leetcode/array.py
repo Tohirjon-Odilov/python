@@ -6,6 +6,28 @@ if 0:
             
     print(Solution().addTwoNumbers([2,4,3],[5,6,4]))  
 
+# 14. Longest Common Prefix
+if 1:
+    class Solution:
+        def longestCommonPrefix(self, strs: list[str]) -> str:
+            comman=""
+            # returning "" , if  List is not present 
+            if len(strs)==0:
+                return comman
+
+            # 0 to first_string length
+            for i in range(len(strs[0])):
+                print(i)
+                for s in strs:
+                    if i==len(s) or s[i]!=strs[0][i]:
+                        print(s[i])
+                        return comman
+                comman+=strs[0][i]
+            return comman
+        
+    print(Solution().longestCommonPrefix(["flower","flow","flight"])) #fl
+    
+
 # 27. Remove Element
 if 1:
     class Solution:
