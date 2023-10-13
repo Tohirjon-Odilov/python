@@ -1,5 +1,5 @@
-  
-
+# if 1:
+    
 
 # 941. Valid Mountain Array
 if 0:
