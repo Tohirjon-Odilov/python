@@ -45,3 +45,18 @@ if 0:
             return list(map(int, list(str(int("".join(map(str, digits)))+1))))
             
 print(Solution().plusOne([1,2,3])) # [1,2,4]
+
+# 2011. Final Value of Variable After Performing Operations
+if 0:
+    class Solution:
+        def finalValueAfterOperations(self, operations: list[str]) -> int:
+            res = 0
+            for i in operations:
+                if i == "++X" or i == "X++":
+                    res += 1
+                elif i == "--X" or i == "X--":
+                    res -= 1
+            return res
+            
+
+    print(Solution().finalValueAfterOperations(["X++","++X","--X","X++"])) # 2
