@@ -7,7 +7,7 @@ class Node:
 class Link_list:
     def __init__(self) -> None:
         self.head = None
-
+        
     def insert(self, newNode):
         if self.head is None:
             self.head = newNode
