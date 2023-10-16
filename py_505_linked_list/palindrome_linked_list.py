@@ -6,7 +6,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    def isPalindrome(self, head) -> bool:
         pass
 
 class Node:
