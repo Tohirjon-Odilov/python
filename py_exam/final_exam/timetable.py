@@ -28,5 +28,3 @@ cl2 = TimeTable("Ingiliz til", "10:30:00", "A202")
 cl3 = TimeTable("Adabiyot", "11:00:00", "C120")
 cl4 = TimeTable("Informatika", "11:00:00", "B103")
 cl5 = TimeTable("Ona tili", "12:30:00", "L203")
-
-    

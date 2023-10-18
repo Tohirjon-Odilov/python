@@ -1,0 +1,8 @@
+CREATE TABLE AEOROFLOT(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+    type VARCHAR(17), 
+    trip INTEGER,
+    town_from VARCHAR(30),
+    town_to VARCHAR(30),
+    time VARCHAR(8)
+);
