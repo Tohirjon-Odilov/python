@@ -18,15 +18,15 @@ def elevator(nums: str) -> str:
         result += ",".join(list(map(str, i))) + "\n"
     return result[:-1]
 
-# print(elevator('''1,4,3,2
-# 1,10,2
-# -
-# 3,6,4,5,6
-# -
-# -
-# 0,0,0
-# -
-# 4
-# 6,5,2
-# -'''))
+print(elevator('''1,4,3,2
+1,10,2
+-
+3,6,4,5,6
+-
+-
+0,0,0
+-
+4
+6,5,2
+-'''))
 print(elevator(input(">>> ")))
