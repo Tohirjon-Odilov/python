@@ -71,7 +71,7 @@ class main1(QWidget):
                 {i['message']}
                 {i['date']}"""
                 self.list_message.addItem(item)
-     
+    
 app = QApplication(argv)
 win = main1()
 win.show()
