@@ -1,6 +1,4 @@
 def sqrt(n:int) -> int:
-    if n < 0:
-        return "Error"
-    return n ** .5
+    return "Error" if n < 0 else n ** .5
 
 print(sqrt(int(input(">>> "))))
