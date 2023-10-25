@@ -24,8 +24,7 @@ def combinations(lst, length):
     with_first = combinations(lst[1:], length-1)
     for item in with_first:
         item.append(lst[0])
+
     return with_first + without_first
 
-# Misol: [1, 2, 3] listidagi barcha 2-element kombinatsiyalari
-natija = combinations([1, 2, 3, 4], 2)
-print(natija)  # Natija: [[1, 2], [1, 3], [2, 3]]
+print(combinations([1, 2, 3, 4], 3))  # Natija: [[1, 2], [1, 3], [2, 3]]
