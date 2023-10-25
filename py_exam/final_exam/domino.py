@@ -3,12 +3,12 @@ def domino(nums:str) -> list[list[int]]:
     nums = eval(nums)
     for i in nums:
         if i in myList:
-            print(i)
+            # print(i)
             myList.remove(i)
             continue
         i = i[::-1]
         if i in myList:
-            print(i)
+            # print(i)
             myList.remove(i)
 
     return myList
