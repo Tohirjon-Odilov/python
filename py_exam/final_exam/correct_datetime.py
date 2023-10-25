@@ -6,7 +6,6 @@ def correct_date_time(day, month, year, hour, minute) -> bool:
         vaqt += datetime.timedelta(hour, minute)
     except:
         return False
-
     return True
 
 print(correct_date_time(12,12,2023,15,58))
