@@ -17,7 +17,6 @@ def to_case(text:str):
             
     return "".join(camel)
 
-
 print(to_case("hello_code_chick"))
 print(to_case("helloCodeChick"))
 print(to_case("is_modal_open"))
