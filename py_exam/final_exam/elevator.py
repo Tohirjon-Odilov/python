@@ -1,10 +1,12 @@
 def elevator(nums: str) -> str:
-    # nums = ",".join(nums.split('\n')).split(',')
-    print(nums)
+    print("\n")
+    nums = ",".join(nums.split('\n')).split(',')
+
+    myDict = {i: [] for i in range(10, -1, -1)}
     # myDict = dict()
     # for i in range(10, -1, -1):
         # myDict[i] = []
-    myDict = {i: [] for i in range(10, -1, -1)}
+
     for i in nums:
         if i.isdigit():
             i = int(i)
@@ -30,15 +32,9 @@ def elevator(nums: str) -> str:
 # 4
 # 6,5,2
 # -'''))
-lst = list()
-for i in range(10):
-    lst += list(input())
-new = list()
-for i in range(len(lst)):
-    if lst[i] != ',':
-        new.append(lst[i])
-        
-# 
-print(new)
 
-print(elevator(new))
+lst = str()
+for i in range(10):
+    lst += input()+'\n'
+
+print(elevator(lst))
