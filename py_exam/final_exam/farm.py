@@ -20,4 +20,5 @@ def count_animals(animal):
 
 print(count_animals("goatcode"))
 print(count_animals("cockdogwdufrbir"))
-print(count_animals("dogdogdogdogdogcat"))
+print(count_animals("dogdogdogdogdog"))
+# print(count_animals("salom"))
