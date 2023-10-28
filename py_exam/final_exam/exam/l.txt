@@ -1,0 +1,25 @@
+Yangi elita poyezdlarida har bir yo‘lovchi o‘rindiqdan joy olish huquqiga ega. Tabiiyki, o‘rindiqlar soni cheklangan va hamma uchun yetarli bo‘lmasligi mumkin. Poyezd yo‘nalishi 0 dan N gacha raqamlangan N+1ta bekatlar orqali o‘tadi. Biror kishi chipta sotib olmoqchi bo‘lganida, u ikkita x (qayerdan) va y (qayerga) bormoqchi bo‘lgan stansiyalarning raqamlarini aytadi. Agar sotib olish vaqtida ushbu hududda kamida bitta o‘rindiq bo‘lsa, unga chipta sotiladi, aks holda "chiptalar yo‘q" xabari ko‘rsatiladi va chipta sotilmaydi. Sizning vazifangiz ushbu turdagi so‘rovlarga ular kelgan tartibda xizmat ko‘rsatadigan dasturni yozishdir.
+
+Kiruvchi ma’lumotlar
+
+Birinchi qatorda uchta raqam mavjud N - stantsiyalar soni (1 ≤ N ≤ 200 000), K - poezddagi o‘rindiqlar soni (1 ≤ K ≤ 1000) va M - so‘rovlar soni
+
+(1 ≤ M ≤ 100 000). Keyingi M qatorlar so‘rovlarni tavsiflaydi, ularning har biri ikkita x va y sonlaridan iborat (0 ≤ x < y <= N).
+
+Chiquvchi ma’lumotlar
+
+Har bir so‘rov uchun dasturingiz chipta sotilmagan bo‘lsa 0 va chipta sotilgan bo‘lsa 1 raqami ko‘rinishida natija berishi kerak. Har bir natija alohida satrda bo‘lishi kerak.
+
+input:
+5 2 4 
+0 4
+1 2
+1 4
+2 4
+        
+
+output:
+1
+1
+0
+1
