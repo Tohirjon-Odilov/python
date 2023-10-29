@@ -21,3 +21,4 @@ queries = [tuple(map(int, line.split())) for line in lines[1:]]
 
 output = check_tickets(N, K, M, queries)
 print(output)
+
