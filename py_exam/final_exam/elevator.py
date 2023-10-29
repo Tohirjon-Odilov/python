@@ -3,9 +3,6 @@ def elevator(nums: str) -> str:
     nums = ",".join(nums.split('\n')).split(',')
 
     myDict = {i: [] for i in range(10, -1, -1)}
-    # myDict = dict()
-    # for i in range(10, -1, -1):
-        # myDict[i] = []
 
     for i in nums:
         if i.isdigit():
@@ -20,18 +17,6 @@ def elevator(nums: str) -> str:
     for i in myDict.values():
         result += ",".join(list(map(str, i))) + "\n"
     return result[:-1]
-
-# print(elevator('''1,4,3,2
-# 1,10,2
-# -
-# 3,6,4,5,6
-# -
-# -
-# 0,0,0
-# -
-# 4
-# 6,5,2
-# -'''))
 
 lst = str()
 for i in range(10):
