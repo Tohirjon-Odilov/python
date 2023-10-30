@@ -16,5 +16,11 @@
         "age": "18",
         "job": "School",
         "hobbies": "Body Building"
+    },
+    {
+        "name": "Rahmatulloh",
+        "age": "19",
+        "job": "Akfa plast",
+        "hobbies": "Drive a car"
     }
 ]
