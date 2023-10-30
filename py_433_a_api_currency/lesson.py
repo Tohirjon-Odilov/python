@@ -22,7 +22,7 @@ Price: {self.price}
             """
     persons = list()
     
-    with open("./cars.json", "r") as file:
+    with open("cars.json", "r") as file:
         datas = loads(file.read())
     
     for i in datas:

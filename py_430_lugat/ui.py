@@ -213,7 +213,6 @@ class ListOfWordsWindow(Window):
         self.close()
         self.search = SearchWindow()
         
-
 class SearchWindow(Window):
     def __init__(self):
         super().__init__()
