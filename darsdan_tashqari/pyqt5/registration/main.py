@@ -22,7 +22,7 @@ class Window(QWidget):
 
     def __my_window(self):
         self.setWindowTitle("QDialog")
-        self.setFixedSize(450, 350)
+        self.setFixedSize(450, 385)
         v_line = QVBoxLayout()
         h_line = QHBoxLayout()
 
@@ -146,6 +146,8 @@ class Window(QWidget):
         # write_file.write()
 
     def clicked_ok(self):
+        red = "border: 1px solid crimson; padding: 5px; border-radius: 5px"
+        black = "border: 1px solid #999; padding: 5px; border-radius: 5px"
         if (
             self.line_name.text() != ""
             and self.line_age.text() != ""
@@ -174,7 +176,6 @@ class Window(QWidget):
                     for j in i.values():
                         print(f"j = {j} name = {name}")
                         if j == name:
-                            # print(j)
                             self.isHas = False
                             break
                     if not self.isHas:
@@ -191,13 +192,58 @@ class Window(QWidget):
                     )
                 else:
                     self.status.setText("Already available.")
+
+                self.label_name.setStyleSheet("color: black")
+                self.label_age.setStyleSheet("color: black")
+                self.label_job.setStyleSheet("color: black")
+                self.label_hobbie.setStyleSheet("color: black")
+                self.line_name.setStyleSheet(black)
+                self.line_age.setStyleSheet(black)
+                self.line_job.setStyleSheet(black)
+                self.line_hobbie.setStyleSheet(black)
         else:
+            if self.line_name.text() == "":
+                self.label_name.setStyleSheet("color: crimson")
+                self.label_age.setStyleSheet("color: black")
+                self.label_job.setStyleSheet("color: black")
+                self.label_hobbie.setStyleSheet("color: black")
+                self.line_name.setStyleSheet(red)
+                self.line_age.setStyleSheet(black)
+                self.line_job.setStyleSheet(black)
+                self.line_hobbie.setStyleSheet(black)
+            elif self.line_age.text() == "":
+                self.label_name.setStyleSheet("color: black")
+                self.label_age.setStyleSheet("color: crimson")
+                self.label_job.setStyleSheet("color: black")
+                self.label_hobbie.setStyleSheet("color: black")
+                self.line_name.setStyleSheet(black)
+                self.line_age.setStyleSheet(red)
+                self.line_job.setStyleSheet(black)
+                self.line_hobbie.setStyleSheet(black)
+            elif self.line_job.text() == "":
+                self.label_name.setStyleSheet("color: black")
+                self.label_age.setStyleSheet("color: black")
+                self.label_job.setStyleSheet("color: crimson")
+                self.label_hobbie.setStyleSheet("color: black")
+                self.line_name.setStyleSheet(black)
+                self.line_age.setStyleSheet(black)
+                self.line_job.setStyleSheet(red)
+                self.line_hobbie.setStyleSheet(black)
+            elif self.line_hobbie.text() == "":
+                self.label_name.setStyleSheet("color: black")
+                self.label_age.setStyleSheet("color: black")
+                self.label_job.setStyleSheet("color: black")
+                self.label_hobbie.setStyleSheet("color: crimson")
+                self.line_name.setStyleSheet(black)
+                self.line_age.setStyleSheet(black)
+                self.line_job.setStyleSheet(black)
+                self.line_hobbie.setStyleSheet(red)
+ 
             self.status.setText("Fill it up.")
             self.status.setStyleSheet("font-size: 25px; margin: 10px 0;color: crimson}")
 
     def stop_program(self):
         exit(0)
-
 
 app = QApplication(argv)
 win = Window()

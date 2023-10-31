@@ -1,13 +1,20 @@
 from json import dumps, loads
-from googletrans import Translator
-import sys
+# from googletrans import Translator
 
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QHBoxLayout
+
+from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 from PyQt5.QtWidgets import QPushButton,QCompleter
 from PyQt5.Qt import Qt 
 
-from css import *
-
+from css import (
+    Button, 
+    Window,
+    Edit,
+    FooterButton,
+    Label,
+    QLW,
+    QPushButton,
+)
 
 class MenuWindow(Window):
     def __init__(self):
@@ -58,6 +65,7 @@ class MenuWindow(Window):
     def exit_window(self):
         self.close()
 
+
 class NewWordWindow(Window):
     def __init__(self):
         super().__init__()
@@ -79,12 +87,13 @@ class NewWordWindow(Window):
         self.edit_uzb.setPlaceholderText('Uzbek...')
 
         self.btn_save = QPushButton('Save')
-        self.btn_save.setFixedSize(100, 60)
-        self.btn_save.setStyleSheet("""background: #79AC78; 
-                           border: 2px solid; 
-                           border-radius: 20px;
-                           font-size: 16px;
-                           """)
+        self.btn_save.setFixedSize(100, 85)
+        self.btn_save.setStyleSheet("""
+            background: #79AC78; 
+            border: 1px solid; 
+            border-radius: 10px;
+            font-size: 16px;
+        """)
         
 
         self.btn_menu = FooterButton('Menu')
@@ -140,6 +149,7 @@ class NewWordWindow(Window):
     def go_search(self):
         self.close()
         self.search = SearchWindow()
+
         
 class ListOfWordsWindow(Window):
     def __init__(self):
@@ -184,7 +194,7 @@ class ListOfWordsWindow(Window):
 
         self.setLayout(self.v_box)
 
-        with open("./data.json", "r") as file:
+        with open("data.json", "r") as file:
             self.data = file.read()
             self.data = loads(self.data)
             for key, elem in self.data.items():
@@ -213,6 +223,7 @@ class ListOfWordsWindow(Window):
         self.close()
         self.search = SearchWindow()
         
+
 class SearchWindow(Window):
     def __init__(self):
         super().__init__()
@@ -252,7 +263,7 @@ class SearchWindow(Window):
 
         self.setLayout(self.v_box)
         
-        with open("./data.json", "r") as file:
+        with open("data.json", "r") as file:
             self.data = file.read()
             self.data = loads(self.data)
             self.lst = list()
@@ -263,16 +274,16 @@ class SearchWindow(Window):
         
         
     def searched_word(self):
-        translator = Translator()
+        # translator = Translator()
         english_word = self.edit_search.text()
-        user = translator.translate(english_word, dest="uz")
-        format_data = f"{english_word}  -->  {user.text} "
-        self.qlw_search.addItem(format_data)
-        with open("./data.json", "r+") as file:
+        # user = translator.translate(english_word, dest="uz")
+        # format_data = f"{english_word}  -->  {user.text} "
+        # self.qlw_search.addItem(format_data)
+        with open("data.json", "r+") as file:
             self.old_data = file.read()
             self.old_data = loads(self.old_data)
             file.seek(0)
-            self.old_data[english_word]= user.text
+            # self.old_data[english_word]= user.text
             file.write(dumps(self.old_data, indent=4))
         
         # menu button
@@ -295,4 +306,8 @@ class SearchWindow(Window):
     def go_new_word(self):
         self.close()
         self.new_word = NewWordWindow()
-        
+
+# MenuWindow(NewWordWindow, ListOfWordsWindow, SearchWindow)
+# NewWordWindow(MenuWindow, ListOfWordsWindow, SearchWindow)
+# ListOfWordsWindow(MenuWindow, NewWordWindow, SearchWindow)
+# SearchWindow(MenuWindow, NewWordWindow, ListOfWordsWindow)

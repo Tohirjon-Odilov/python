@@ -4,7 +4,6 @@ QWidget {
     color: #222;
 }
 
-
 QPushButton {
     background-color: transparent;
     border: 1px solid;
@@ -12,12 +11,14 @@ QPushButton {
     border-radius: 5px;
 }
 
-/* QLineEdit::placeholder{
-    color: #999
-    
+QLineEdit{
+    color: #555;
+    border: 1px solid #999;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-QLineEdit{
+/*QLineEdit{
     border-width: 2px;
     font-size: 14px;
 } */
