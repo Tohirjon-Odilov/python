@@ -1,12 +1,19 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QMessageBox
+from PyQt5.QtWidgets import (
+    QApplication, 
+    QWidget, 
+    QPushButton, 
+    QHBoxLayout, 
+    QVBoxLayout, 
+    QMessageBox
+)
 
 class TicTacToe(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("TIC TAC TOE")
         self.setFixedSize(500, 500)
-
+        self.status = True
         self.matrix = [""] * 9  # 3x3 o'yin matritsasi
         self.current_player = "X"  # O'yinchi boshlanishi "X" bilan
         self.buttons = []  # Matritsani ko'rsatish uchun tugmalar
@@ -49,6 +56,7 @@ class TicTacToe(QWidget):
     def on_button_click(self, row, col):
         index = row * 3 + col
         if self.matrix[index] == "":
+            # print(index, row, col)
             self.matrix[index] = self.current_player
             self.buttons[index].setText(self.current_player)
             self.buttons[index].setEnabled(False)
@@ -61,9 +69,10 @@ class TicTacToe(QWidget):
             (0, 3, 6), (1, 4, 7), (2, 5, 8),  # Ustunlar
             (0, 4, 8), (2, 4, 6)             # Diagonal
         ]
-
+        print()
         for combo in winning_combinations:
             a, b, c = combo
+            print(a,b,c)
             if self.matrix[a] == self.matrix[b] == self.matrix[c] != "":
                 self.show_winner_message(self.current_player)
                 return
@@ -73,7 +82,10 @@ class TicTacToe(QWidget):
 
     def show_winner_message(self, winner):
         message_box = QMessageBox(self)
-        message_box.setText(f"{winner} yutdi!")
+        if winner.find("Durrang") != -1:
+            message_box.setText(winner)
+        else:
+            message_box.setText(f"{winner} yutdi!")
         message_box.setWindowTitle("Natija")
         message_box.exec_()
         self.reset_game()
