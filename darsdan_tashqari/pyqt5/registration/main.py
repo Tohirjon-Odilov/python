@@ -5,7 +5,6 @@ from registration import Window, Login
 
 
 app = QApplication(argv)
-win = Login("Tohirjon")
 win = Window()
 
 # win.show()
