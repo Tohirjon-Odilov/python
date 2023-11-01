@@ -1,30 +1,25 @@
 
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtCore import Qt
 
-class MyWindow(QMainWindow):
+class Login(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Login")
+        self.setFixedSize(300, 300)
+        self.setStyleSheet("background-color: royalblue")
+        self.label = QLabel("Normal Text")
+        self.v_line = QVBoxLayout()
+        self.v_line.addWidget(self.label)
+        # self.label.setGeometry(150, 150, 200, 50)
+        self.setLayout(self.v_line)
+        # self.label.setAlignment(Qt.AlignCenter)
+        # print(name)
+        # self.show()
 
-        self.label = QLabel("Normal Text", self)
-        self.label.setGeometry(100, 50, 200, 50)
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.label.mousePressEvent = self.toggle_underline
-        self.underlined = False
-
-    def toggle_underline(self, event):
-        if self.underlined:
-            # print()
-            self.label.setText("<u>Normal Text</u>")
-            self.underlined = False
-        else:
-            # print(self.sender())
-            self.label.setText("Normal Text")
-            self.underlined = True
 
 app = QApplication([])
-window = MyWindow()
+window = Login()
 window.show()
 app.exec_()
 

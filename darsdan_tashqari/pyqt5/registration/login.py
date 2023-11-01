@@ -15,13 +15,13 @@ from PyQt5.QtWidgets import (
 # from registration import Window
 
 class Login(QWidget):
-    def __init__(self) -> None:
+    def __init__(self, name):
         super().__init__()
-        print("salom")
-        self.setFixedSize(450, 400)
-        # label = QPushButton("Salom")
-        # self.setLayout(label)
-        self.show()
+        self.setFixedSize(300, 300)
+        self.label = QLabel("Normal Text", self)
+        # self.label.setGeometry(150, 150, 200, 50)
+        self.label.setAlignment(Qt.AlignCenter)
+        # self.show()
 
 
 

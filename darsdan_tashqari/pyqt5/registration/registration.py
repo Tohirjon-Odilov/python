@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
     QHBoxLayout,
 )
 
-from login import Login
+# from login import Login
 
 class Window(QWidget):
     def __init__(self) -> None:
@@ -18,6 +18,7 @@ class Window(QWidget):
         self.move(450, 100)
         self.setStyleSheet(open("style.css").read())
         self.data = dict()
+        self.show()
 
     def __my_window(self):
         self.setWindowTitle("QDialog")
@@ -141,7 +142,7 @@ class Window(QWidget):
         # Set Display
         v_line.setAlignment(Qt.AlignmentFlag.AlignTop)
         
-        
+        # login button
         self.login = QLabel("<u>I have already account.</u>")
         self.login.setCursor(Qt.PointingHandCursor)
         self.login.setStyleSheet("color: lime")
@@ -163,17 +164,18 @@ class Window(QWidget):
     # def toggle_underline(self):
 
     def mousePressEvent(self, event):
-        if self.underlined:
-            self.login.setText("<u>I have already account.</u>")
-            self.underlined = False
-        else:
-            self.login.setText("I have already account.")
-            self.underlined = True
-            
         if self.login.geometry().contains(event.pos()):
-            print("Labelga bosildi!")
-            login = Login()
-            # login.show()
+            if self.underlined:
+                self.login.setText("<u>I have already account.</u>")
+                self.underlined = False
+            else:
+                self.login.setText("I have already account.")
+                self.underlined = True
+            # print("Labelga bosildi!")
+            login = Login(self.line_name.text())
+            # print(login)
+            # self.close()
+            login.show()
 
     def clicked_ok(self):
         red = "border: 1px solid crimson; padding: 5px; border-radius: 5px"
@@ -274,3 +276,21 @@ class Window(QWidget):
 
     def stop_program(self):
         exit(0)
+    
+    
+# ulayolmadim yangi oyna ochilmadi    
+class Login(QWidget):
+    def __init__(self, name):
+        super().__init__()
+        self.setWindowTitle("Login")
+        self.setFixedSize(300, 300)
+        self.__ui(name)
+        self.show()
+
+    def __ui(self, name):
+        print(name)
+        self.setStyleSheet("background-color: royalblue")
+        self.label = QLabel("Normal Text")
+        self.v_line = QVBoxLayout()
+        self.v_line.addWidget(self.label)
+        self.setLayout(self.v_line)
