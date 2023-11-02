@@ -71,6 +71,7 @@ class TicTacToe(QWidget):
         ]
         print()
         for combo in winning_combinations:
+            
             a, b, c = combo
             print(a,b,c)
             if self.matrix[a] == self.matrix[b] == self.matrix[c] != "":
