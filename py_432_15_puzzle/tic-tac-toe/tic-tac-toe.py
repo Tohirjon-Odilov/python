@@ -85,7 +85,7 @@ class TicTacToe(QWidget):
         message_box = QMessageBox(self)
         if winner.find("Durrang") != -1:
             message_box.setText(winner)
-        else:
+        else: 
             message_box.setText(f"{winner} yutdi!")
         message_box.setWindowTitle("Natija")
         message_box.exec_()
