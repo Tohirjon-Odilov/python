@@ -8,9 +8,14 @@ from PyQt5.QtWidgets import (
     QMessageBox
 )
 
+from login import Login
+
 class TicTacToe(QWidget):
     def __init__(self):
         super().__init__()
+        
+        login = Login()
+        # Login()
         self.setWindowTitle("TIC TAC TOE")
         self.setFixedSize(500, 500)
         self.status = True
@@ -92,6 +97,7 @@ class TicTacToe(QWidget):
         self.reset_game()
 
     def reset_game(self):
+        self.close()
         self.matrix = [""] * 9
         for button in self.buttons:
             button.setText("")
