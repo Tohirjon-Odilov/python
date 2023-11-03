@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtWidgets import QApplication
 
 
-from ui import *
+from ui import MenuWindow
 
 
 app = QApplication(sys.argv)

@@ -50,17 +50,17 @@ class MenuWindow(Window):
     def show_new_word(self):
         self.close()
         self.new = NewWordWindow()
-        self.new.show()
+        # self.new.show()
 
     def show_list(self):
         self.close()
         self.new = ListOfWordsWindow()
-        self.new.show()
+        # self.new.show()
 
     def show_search(self):
         self.close()
         self.new = SearchWindow()
-        self.new.show()
+        # self.new.show()
 
     def exit_window(self):
         self.close()

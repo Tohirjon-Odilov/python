@@ -5,7 +5,8 @@ from PyQt5.QtWidgets import (
     QPushButton, 
     QHBoxLayout, 
     QVBoxLayout, 
-    QMessageBox
+    QMessageBox,
+    QLabel
 )
 
 from login import Login
@@ -14,8 +15,6 @@ class TicTacToe(QWidget):
     def __init__(self):
         super().__init__()
         
-        login = Login()
-        # Login()
         self.setWindowTitle("TIC TAC TOE")
         self.setFixedSize(500, 500)
         self.status = True
@@ -23,6 +22,7 @@ class TicTacToe(QWidget):
         self.current_player = "X"  # O'yinchi boshlanishi "X" bilan
         self.buttons = []  # Matritsani ko'rsatish uchun tugmalar
         self.init_ui()
+        self.show()
 
     def init_ui(self):
         layout = QVBoxLayout()
@@ -97,14 +97,28 @@ class TicTacToe(QWidget):
         self.reset_game()
 
     def reset_game(self):
+        Login()
         self.close()
+        
         self.matrix = [""] * 9
         for button in self.buttons:
             button.setText("")
             button.setEnabled(True)
         self.current_player = "X"
+        
+class Login(QWidget):
+    def __init__(self) -> None:
+        super().__init__()
+        self.setWindowTitle("Login")
+        self.setFixedSize(300, 500)
+        self.setStyleSheet("background-color: crimson")
+        self.label = QLabel("salom")
+        self.h = QHBoxLayout()
+        self.h.addWidget(self.label)
+        self.setLayout(self.h)
+        self.show()
 
 app = QApplication(sys.argv)
 window = TicTacToe()
-window.show()
+# window.show()
 sys.exit(app.exec_())

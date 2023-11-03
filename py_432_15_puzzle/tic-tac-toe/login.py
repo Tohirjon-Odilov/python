@@ -19,7 +19,7 @@ class Login(QWidget):
         self.h = QHBoxLayout()
         self.h.addWidget(self.label)
         self.setLayout(self.h)
-        input("salom")
+        # input("salom")
         self.show()
         
         
