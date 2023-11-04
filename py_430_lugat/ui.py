@@ -150,7 +150,7 @@ class NewWordWindow(Window):
         self.close()
         self.search = SearchWindow()
 
-        
+
 class ListOfWordsWindow(Window):
     def __init__(self):
         super().__init__()
