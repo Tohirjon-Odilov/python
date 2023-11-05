@@ -85,7 +85,7 @@ class Window(QWidget):
         h_line.addWidget(self.status)
         # h_line.
         v_line.addLayout(h_line)
-
+ 
         # Button Cancel
         h_line = QHBoxLayout()
         self.btn_cancel = QPushButton(self)
