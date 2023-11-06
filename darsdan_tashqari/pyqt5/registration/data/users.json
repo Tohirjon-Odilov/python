@@ -28,17 +28,5 @@
         "age": "20",
         "job": "QA",
         "hobbies": "Play tennis"
-    },
-    {
-        "name": "Homidjon",
-        "age": "23",
-        "job": "Engeener",
-        "hobbies": "Play Footbal"
-    },
-    {
-        "name": "Hoshimjon",
-        "age": "23",
-        "job": "Engeener",
-        "hobbies": "play footbal"
     }
 ]
