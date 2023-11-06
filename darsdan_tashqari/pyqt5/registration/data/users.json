@@ -40,11 +40,5 @@
         "age": "23",
         "job": "Engeener",
         "hobbies": "play footbal"
-    },
-    {
-        "name": "Ahmad",
-        "age": "29",
-        "job": "QA",
-        "hobbies": "Game"
     }
 ]
