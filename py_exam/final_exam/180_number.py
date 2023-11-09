@@ -12,7 +12,6 @@
 #             res += "0"
 #     return int(num) == int(res[::-1])
             
-
 # print(num_180(609609))
 # print(num_180(9669))
 # print(num_180(69069069))
