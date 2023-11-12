@@ -22,6 +22,8 @@
 # for i in range(int(input("Son kiriting: "))+1):
 #     print("* " * i)
 
+
+
 # print("n = ", input("Kirit: "))
 # sourceFile = open('python.txt', 'w')
 # print('Pretty cool, huh!', file=sourceFile)
