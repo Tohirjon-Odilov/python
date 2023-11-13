@@ -9,4 +9,5 @@ else:
     for i in range(num + 1):
         summa += sum([i])
 
+
 print(summa)
