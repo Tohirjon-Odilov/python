@@ -8,5 +8,4 @@ def persistence(n):
         count += 1
     return count
 
-
 print(persistence(999))
